@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abdurazak | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+    
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="brand">
+          <img
+            src="profile.jpg"
+            alt="Abdurazak's Photo"
+            class="profile-photo"
+          />
+          <h1 class="logo">Abdurazak</h1>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#hero" class="nav-home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-controls">
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-label="Open navigation"
+          >
+            &#9776;
+          </button>
+          <button id="dark-mode-toggle" class="dark-mode-toggle">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero">
+        <div class="container">
+          <h2 id="typed-text"></h2>
+          <p>
+            A passionate software engineering student and aspiring backend
+            developer.
+          </p>
+          <a href="#projects" class="btn">See My Work</a>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <h2>About Me</h2>
+          <p>
+            Hi, I'm <strong>Abdurazak</strong> — a passionate and
+            detail-oriented Software Engineering student at AASTU. I specialize
+            in building clean and efficient full-stack web applications, with a
+            strong interest in backend development using Python and Django.
+          </p>
+          <p>
+            What sets me apart is my eagerness to learn and adapt. I believe in
+            writing meaningful code that solves real-world problems, and I love
+            turning ideas into working software. Whether I'm developing a
+            user-friendly interface or structuring a complex backend system, I
+            bring dedication and curiosity to every project.
+          </p>
+          <p>
+            Through this portfolio, I aim to connect with like-minded
+            individuals and organizations that value innovation, teamwork, and
+            continuous growth. Feel free to explore my projects, reach out, or
+            follow me on social media!
+          </p>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="project-card">
+            <h3>Personal Portfolio Website</h3>
+            <p>
+              A responsive personal website to showcase my projects, skills, and
+              contact information. Built with HTML, CSS, and JavaScript.
+            </p>
+            <a
+              href="https://github.com/Abdurazakm/portfolio"
+              target="_blank"
+              class="btn"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="container">
+          <h2>Skills</h2>
+          <ul class="skills-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Python</li>
+            <li>Django</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <h2>Contact</h2>
+          <p>
+            I'd love to hear from you! Fill out the form below or connect with
+            me on social media.
+          </p>
+
+          <form
+            action="https://formspree.io/f/mdkgjpjd"
+            method="POST"
+            class="contact-form"
+          >
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="_replyto"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <input
+              type="hidden"
+              name="_subject"
+              value="New message from portfolio contact form"
+            />
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+
+          <div class="social-links">
+            <a href="https://github.com/Abdurazakm" target="_blank">GitHub</a>
+            <a
+              href="https://et.linkedin.com/in/abdurazak-ledamo-5ba626357"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a href="mailto:abdurazakm343@gmail.com">Email</a>
+          </div>
+        </div>
+      </section>
+      <section id="footer">
+        <div class="container">
+          <p>
+            Thank you for visiting my portfolio! Feel free to reach out if you
+            have any questions.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Abdurazak. Built with ❤️ and code.</p>
+        <div class="social-footer">
+          <a href="https://github.com/Abdurazakm" target="_blank">GitHub</a>
+          <a
+            href="https://et.linkedin.com/in/abdurazak-ledamo-5ba626357"
+            target="_blank"
+            >LinkedIn</a
+          >
+          <a href="mailto:abdurazakm343@gmail.com">Email</a>
+        </div>
+      </div>
+    </footer>
+    <li class="mobile-dark-toggle" style="display:none;">
+      <button id="mobile-dark-mode-toggle" class="dark-mode-toggle" type="button">🌙 Dark Mode</button>
+    </li>
+  </body>
+</html>

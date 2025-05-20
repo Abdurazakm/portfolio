@@ -1,0 +1,546 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --text-color: #333;
+    --bg-color: #fff;
+    --btn-color: #3498db;
+    --btn-text-color: #fff;
+}
+
+body.dark-mode {
+    --primary-color: #ecf0f1;
+    --accent-color: #9b59b6;
+    --text-color: #ecf0f1;
+    --bg-color: #1e1e1e;
+    --btn-color: #9b59b6;
+    --btn-text-color: #fff;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #e5e7eb;
+    /* or any color you like */
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    padding-top: 80px;
+    /* Adjust to your header height */
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Default light green for Home link */
+.nav-links .nav-home {
+    color: #22c55e !important;
+    /* Tailwind's green-500 */
+    font-weight: 600;
+}
+
+/* Active link style (light green) */
+.nav-links a.active,
+.nav-links a:active {
+    color: #22c55e !important;
+    font-weight: 600;
+}
+
+/* Optional: Add a smooth transition */
+.nav-links a {
+    transition: color 0.2s;
+}
+
+#hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: #e0e7ff;
+    /* light blue */
+    color: white;
+}
+
+.btn {
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: darken(var(--btn-color), 10%);
+}
+
+/* General Section Styling */
+section {
+    padding: 60px 0;
+    background: #f9f9f9;
+    border-radius: 22px;
+    margin: 48px 0;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+    margin-top: 40px;
+}
+
+section:first-of-type {
+    margin-top: 0;
+}
+
+section:nth-child(even) {
+    background: #fff;
+}
+
+/* Section Headings */
+section h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* About Me */
+#about {
+    background: #f9fafb;
+    /* very light gray */
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Projects */
+#projects {
+    background: #f0f7ff;
+    /* soft blue */
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    padding: 28px 24px;
+    margin: 24px auto;
+    max-width: 500px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
+}
+
+.project-card h3 {
+    color: #2563eb;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: #555;
+    margin-bottom: 18px;
+}
+
+.project-card .btn {
+    background: #2563eb;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.project-card .btn:hover {
+    background: #1e40af;
+}
+
+/* Skills */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    padding: 0;
+    margin: 24px 0 0 0;
+    list-style: none;
+}
+
+.skills-list li {
+    background: #e0e7ff;
+    color: #3730a3;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 1px 4px rgba(55, 48, 163, 0.07);
+    transition: background 0.2s, color 0.2s;
+}
+
+.skills-list li:hover {
+    background: #3730a3;
+    color: #fff;
+}
+
+/* Contact */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 420px;
+    margin: 0 auto 24px auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 7px;
+    border: 1px solid #cbd5e1;
+    font-size: 1rem;
+    background: #f1f5f9;
+    transition: border 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1.5px solid #2563eb;
+    outline: none;
+}
+
+.contact-form .btn {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.contact-form .btn:hover {
+    background: #1e40af;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 18px;
+}
+
+.social-links a {
+    border: 2px solid #60a5fa;
+    border-radius: 10px;
+    padding: 12px 0;
+    margin: 18px 0 0 0;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.social-links a:hover {
+    color: #1e40af;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* Brand (profile photo + logo) alignment */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* Adjust gap as needed */
+}
+
+.profile-photo {
+    width: 100px;
+    height: 115px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0;
+    /* Remove extra margin if any */
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+#typed-text::after {
+    content: '|';
+    animation: blink 1s steps(1) infinite;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+body.dark-mode,
+body.dark-mode section,
+body.dark-mode .project-card,
+body.dark-mode .skills-list li,
+body.dark-mode .contact-form,
+body.dark-mode .social-links,
+body.dark-mode header,
+body.dark-mode footer {
+    background: #111 !important;
+    color: #f5f5f5 !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode a,
+body.dark-mode li,
+body.dark-mode label {
+    color: #f5f5f5 !important;
+}
+
+body.dark-mode .project-card {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .skills-list li {
+    background: #222 !important;
+    color: #e0e7ff !important;
+}
+
+body.dark-mode .project-card .btn,
+body.dark-mode .contact-form .btn {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+body.dark-mode .social-links a {
+    color: #90cdf4 !important;
+}
+
+body.dark-mode .social-links a:hover {
+    color: #60a5fa !important;
+}
+
+/* Light blue border for main components except the form and social-links */
+section,
+.project-card,
+.skills-list li {
+    border: 1.5px solid #60a5fa;
+    box-sizing: border-box;
+}
+
+/* Optional: In dark mode, make the border a bit brighter */
+body.dark-mode section,
+body.dark-mode .project-card,
+body.dark-mode .skills-list li {
+    border: 1.5px solid #3b82f6;
+    /* Tailwind's blue-500 */
+}
+
+/* Hamburger icon styles */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+/* Responsive nav */
+@media (max-width: 768px) {
+    nav ul.nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--primary-color, #2563eb);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 180px;
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        padding: 18px 0;
+        z-index: 100;
+    }
+
+    nav ul.nav-links.open {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1100;
+    }
+
+    header .container {
+        position: relative;
+    }
+
+    body.dark-mode nav ul.nav-links {
+        background: #111 !important;
+        border: 1.5px solid #3b82f6;
+    }
+}
+
+/* Show nav links on desktop */
+@media (min-width: 769px) {
+    nav ul.nav-links {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+        box-shadow: none;
+        width: auto;
+        padding: 0;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    header .container {
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+    }
+
+    .brand .logo {
+        font-size: 1.1rem;
+    }
+
+    .profile-photo {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Hide dark mode toggle in header controls on very small screens */
+@media (max-width: 400px) {
+    .header-controls .dark-mode-toggle {
+        display: none !important;
+    }
+
+    .mobile-dark-toggle {
+        display: block !important;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .mobile-dark-toggle .dark-mode-toggle {
+        width: 100%;
+        font-size: 1.2rem;
+        background: none;
+        border: none;
+        color: #22c55e;
+        cursor: pointer;
+        padding: 10px 0;
+    }
+}
