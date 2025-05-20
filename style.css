@@ -349,7 +349,7 @@ footer {
 }
 
 .profile-photo {
-    width: 100px;
+    width: 105px;
     height: 115px;
     border-radius: 50%;
     object-fit: cover;
@@ -550,13 +550,11 @@ body.dark-mode .skills-list li {
     .header-controls .dark-mode-toggle {
         display: none !important;
     }
-
     .mobile-dark-toggle {
         display: block !important;
         text-align: center;
         margin-top: 10px;
     }
-
     .mobile-dark-toggle .dark-mode-toggle {
         width: 100%;
         font-size: 1.2rem;
