@@ -17,7 +17,7 @@ body.dark-mode {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Times New Roman", Times, serif;
     background: #e5e7eb;
     color: var(--text-color);
     margin: 0;
@@ -527,6 +527,7 @@ body.dark-mode .social-links a:hover {
         z-index: 100;
         text-align: left; /* Align text within the dropdown */
     }
+    
 
     nav ul.nav-links li {
         width: 100%; /* Make list items take full width */
@@ -613,6 +614,10 @@ body.dark-mode .social-links a:hover {
         width: 36px;
         height: 36px;
     }
+    main{
+        position: relative;
+    bottom: 70px;
+}
 
     /* Adjust padding for the mobile dark mode toggle button on very small screens if needed */
 
