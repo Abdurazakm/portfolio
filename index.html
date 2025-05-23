@@ -1,50 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abdurazak | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="image/favicon.ico" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      href="[https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap](https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap)"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css)">
     <script src="script.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <div class="brand">
-          <img
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <img
             src="image/profile.jpg"
             alt="Abdurazak's Photo"
             class="profile-photo"
           />
-          <h1 class="logo">Abdurazak</h1>
-        </div>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="#hero" class="nav-home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="header-controls">
-          <button
-            class="nav-toggle"
-            id="nav-toggle"
-            aria-label="Open navigation"
-          >
-            &#9776;
-          </button>
-          <button id="dark-mode-toggle" class="dark-mode-toggle">🌙</button>
-        </div>
+        <h1 class="logo">Abdurazak</h1>
       </div>
-    </header>
-
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="mobile-dark-toggle">
+            <button
+              id="mobile-dark-mode-toggle"
+              class="dark-mode-toggle"
+              aria-label="Toggle dark mode"
+            >
+              <span class="dark-icon">💡</span> <span class="light-icon">🔆</span> <span class="toggle-text"></span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-controls">
+        <button
+          id="dark-mode-toggle"
+          class="dark-mode-toggle"
+          aria-label="Toggle dark mode"
+        >
+          <span class="dark-icon">💡</span> <span class="light-icon">🔆</span> </button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation">
+          &#9776; </button>
+      </div>
+    </div>
+  </header>
     <main>
       <section id="hero">
         <div class="container">
@@ -92,7 +101,7 @@
               contact information. Built with HTML, CSS, and JavaScript.
             </p>
             <a
-              href="https://github.com/Abdurazakm/portfolio"
+              href="[https://github.com/Abdurazakm/portfolio](https://github.com/Abdurazakm/portfolio)"
               target="_blank"
               class="btn"
               >View on GitHub</a
@@ -126,7 +135,7 @@
           </p>
 
           <form
-            action="https://formspree.io/f/mdkgjpjd"
+            action="[https://formspree.io/f/mdkgjpjd](https://formspree.io/f/mdkgjpjd)"
             method="POST"
             class="contact-form"
           >
@@ -152,9 +161,9 @@
           </form>
 
           <div class="social-links">
-            <a href="https://github.com/Abdurazakm" target="_blank">GitHub</a>
+            <a href="[https://github.com/Abdurazakm](https://github.com/Abdurazakm)" target="_blank">GitHub</a>
             <a
-              href="https://et.linkedin.com/in/abdurazak-ledamo-5ba626357"
+              href="[https://et.linkedin.com/in/abdurazak-ledamo-5ba626357](https://et.linkedin.com/in/abdurazak-ledamo-5ba626357)"
               target="_blank"
               >LinkedIn</a
             >
@@ -176,9 +185,9 @@
       <div class="container">
         <p>&copy; 2025 Abdurazak. Built with ❤️ and code.</p>
         <div class="social-footer">
-          <a href="https://github.com/Abdurazakm" target="_blank"><img src="image/github.png" alt=""></a>
+          <a href="[https://github.com/Abdurazakm](https://github.com/Abdurazakm)" target="_blank"><img src="image/github.png" alt=""></a>
           <a
-            href="https://et.linkedin.com/in/abdurazak-ledamo-5ba626357"
+            href="[https://et.linkedin.com/in/abdurazak-ledamo-5ba626357](https://et.linkedin.com/in/abdurazak-ledamo-5ba626357)"
             target="_blank"
             ><img src="image/linkedin.png" alt=""></a
           >
@@ -186,14 +195,5 @@
         </div>
       </div>
     </footer>
-    <li class="mobile-dark-toggle" style="display: none">
-      <button
-        id="mobile-dark-mode-toggle"
-        class="dark-mode-toggle"
-        type="button"
-      >
-        🌙 Dark Mode
-      </button>
-    </li>
   </body>
 </html>

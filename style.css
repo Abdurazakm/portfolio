@@ -19,15 +19,10 @@ body.dark-mode {
 body {
     font-family: 'Roboto', sans-serif;
     background: #e5e7eb;
-    /* or any color you like */
     color: var(--text-color);
     margin: 0;
-    padding: 0;
-    padding-top: 200px; /* Adjust this value to match your header's height */
-    color: #40514e;
-    margin: 0;
+    padding-top: 200px;
     text-align: center;
-    font-family: "Merriweather", serif;
 }
 
 .container {
@@ -44,7 +39,7 @@ header {
     width: 100%;
     z-index: 1000;
     background: var(--primary-color, #2563eb);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
 }
 
 header .container {
@@ -76,8 +71,7 @@ nav a {
 
 /* Default light green for Home link */
 .nav-links .nav-home {
-    color: #22c55e !important;
-    /* Tailwind's green-500 */
+    color: #22c55e !important; /* Tailwind's green-500 */
     font-weight: 600;
 }
 
@@ -96,8 +90,7 @@ nav a {
 #hero {
     text-align: center;
     padding: 60px 20px;
-    background: #e0e7ff;
-    /* light blue */
+    background: #e0e7ff; /* light blue */
     color: white;
 }
 
@@ -114,7 +107,7 @@ nav a {
 }
 
 .btn:hover {
-    background-color: darken(var(--btn-color), 10%);
+    background-color: #2b7add; /* A slightly darker blue for hover */
 }
 
 /* General Section Styling */
@@ -122,9 +115,10 @@ section {
     padding: 60px 0;
     background: #f9f9f9;
     border-radius: 22px;
-    margin: 48px 0;
+    margin: 48px auto;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
-    margin-top: 40px;
+    border: 1.5px solid #60a5fa;
+    box-sizing: border-box;
 }
 
 section:first-of-type {
@@ -148,7 +142,6 @@ section h2 {
 /* About Me */
 #about {
     background: #f9fafb;
-    /* very light gray */
 }
 
 #about p {
@@ -161,31 +154,31 @@ section h2 {
     margin-left: auto;
     margin-right: auto;
 }
+
 h1 {
     margin-top: 0;
     font-family: "Sacramento", cursive;
     font-size: 5.625rem;
     margin: 50px auto 0 auto;
     color: #66BFBF;
-   
 }
-h2{
+
+h2 {
     color: #66BFBF;
     font-family: "Montserrat", sans-serif;
     font-size: 2.5rem;
     font-weight: normal;
-    padding: bottom 10px; 
-   
-
+    padding-bottom: 10px;
 }
-h3{
+
+h3 {
     font-family: "Montserrat", sans-serif;
-    color: #11999E;}
+    color: #11999E;
+}
 
 /* Projects */
 #projects {
     background: #f0f7ff;
-    /* soft blue */
 }
 
 .project-card {
@@ -197,6 +190,8 @@ h3{
     max-width: 500px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
+    border: 1.5px solid #60a5fa;
+    box-sizing: border-box;
 }
 
 .project-card:hover {
@@ -249,6 +244,8 @@ h3{
     font-weight: 500;
     box-shadow: 0 1px 4px rgba(55, 48, 163, 0.07);
     transition: background 0.2s, color 0.2s;
+    border: 1.5px solid #60a5fa;
+    box-sizing: border-box;
 }
 
 .skills-list li:hover {
@@ -303,14 +300,12 @@ h3{
     justify-content: center;
     gap: 22px;
     margin-top: 18px;
-    
 }
 
 .social-links a {
     border: 2px solid #60a5fa;
     border-radius: 10px;
     padding: 12px 0;
-    margin: 18px 0 0 0;
     width: 100%;
     text-align: center;
     box-sizing: border-box;
@@ -329,15 +324,25 @@ footer {
     padding: 20px 0;
 }
 
-.dark-mode-toggle {
+/* Dark Mode Toggle (Desktop) */
+#dark-mode-toggle { /* This is the desktop toggle */
     position: absolute;
-    top: 20px;
+    top: 50%;
     right: 20px;
+    transform: translateY(-50%);
     background: none;
     border: none;
-    font-size: 1.5rem;
     cursor: pointer;
-    color: white;
+    padding: 8px;
+    z-index: 1001;
+    font-size: 1.5rem;
+    display: flex; /* Ensure flex for icon */
+    align-items: center;
+    gap: 8px;
+    color: currentColor; /* Inherit color, then adjust in dark mode */
+}
+#dark-mode-toggle .toggle-text { /* Hide text on desktop toggle */
+    display: none;
 }
 
 /* Brand (profile photo + logo) alignment */
@@ -345,7 +350,6 @@ footer {
     display: flex;
     align-items: center;
     gap: 12px;
-    /* Adjust gap as needed */
 }
 
 .profile-photo {
@@ -354,7 +358,6 @@ footer {
     border-radius: 50%;
     object-fit: cover;
     margin: 0;
-    /* Remove extra margin if any */
 }
 
 @keyframes floatIn {
@@ -370,7 +373,6 @@ footer {
 }
 
 @keyframes float {
-
     0%,
     100% {
         transform: translateY(0);
@@ -389,7 +391,6 @@ footer {
 }
 
 @keyframes blink {
-
     0%,
     50% {
         opacity: 1;
@@ -401,26 +402,30 @@ footer {
     }
 }
 
+/* Dark Mode Overrides */
 body.dark-mode,
-body.dark-mode section,
-body.dark-mode .project-card,
-body.dark-mode .skills-list li,
-body.dark-mode .contact-form,
-body.dark-mode .social-links,
 body.dark-mode header,
 body.dark-mode footer {
-    background: #111 !important;
-    color: #f5f5f5 !important;
+    background: var(--bg-color) !important;
+    color: var(--text-color) !important;
+}
+
+body.dark-mode section,
+body.dark-mode .project-card,
+body.dark-mode .skills-list li {
+    background: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    border: 1.5px solid #3b82f6; /* Tailwind's blue-500 */
 }
 
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
 body.dark-mode p,
-body.dark-mode a,
+body.dark-mode a:not(.btn):not(.nav-links a), /* Exclude buttons and nav links from this override */
 body.dark-mode li,
 body.dark-mode label {
-    color: #f5f5f5 !important;
+    color: var(--text-color) !important;
 }
 
 body.dark-mode .project-card {
@@ -434,8 +439,8 @@ body.dark-mode .skills-list li {
 
 body.dark-mode .project-card .btn,
 body.dark-mode .contact-form .btn {
-    background: #2563eb !important;
-    color: #fff !important;
+    background: var(--btn-color) !important;
+    color: var(--btn-text-color) !important;
 }
 
 body.dark-mode .social-links a {
@@ -446,20 +451,17 @@ body.dark-mode .social-links a:hover {
     color: #60a5fa !important;
 }
 
-/* Light blue border for main components except the form and social-links */
-section,
-.project-card,
-.skills-list li {
-    border: 1.5px solid #60a5fa;
-    box-sizing: border-box;
+/* Icon visibility control */
+.dark-mode-toggle .light-icon {
+    display: none;
 }
 
-/* Optional: In dark mode, make the border a bit brighter */
-body.dark-mode section,
-body.dark-mode .project-card,
-body.dark-mode .skills-list li {
-    border: 1.5px solid #3b82f6;
-    /* Tailwind's blue-500 */
+.dark-mode .dark-mode-toggle .dark-icon {
+    display: none;
+}
+
+.dark-mode .dark-mode-toggle .light-icon {
+    display: inline-block;
 }
 
 /* Hamburger icon styles */
@@ -473,28 +475,75 @@ body.dark-mode .skills-list li {
     margin-left: 1rem;
 }
 
-/* Responsive nav */
+/* Mobile Dark Mode Toggle (inside nav for small screens) */
+.mobile-dark-toggle {
+    display: none; /* Hide the li element itself on desktop */
+    /* Reduced margin-top and padding-top for a tighter look */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separator line in menu */
+    margin-top: 5px; /* Reduced from 10px */
+    padding-top: 5px; /* Reduced from 10px */
+}
+
+/* SPECIAL TREATMENT for the dark mode toggle button *inside* the mobile menu */
+.mobile-dark-toggle .dark-mode-toggle {
+    font-size: 1rem; /* Smaller font for mobile menu */
+    width: 100%; /* Make it take full width of the list item */
+    justify-content: flex-start; /* Align content to the left */
+    /* Reduced padding for a tighter look */
+    padding: 8px 20px; /* Reduced from 10px 20px */
+    /* Reset position and transform for mobile menu context */
+    position: static;
+    transform: none;
+    color: #fff; /* Ensure it's white/light in the primary color background */
+    display: flex; /* Ensure the button itself is a flex container */
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    background: transparent; /* Remove background color */
+}
+
+/* Ensure the toggle text is visible for the mobile menu button */
+.mobile-dark-toggle .toggle-text {
+    display: inline-block; /* Show the text */
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 5px; /* Added spacing */
+}
+
+
+/* Responsive nav and toggle visibility */
 @media (max-width: 768px) {
     nav ul.nav-links {
-        display: none;
+        display: none; /* Hidden by default, shown when 'open' class is added */
         flex-direction: column;
         background: var(--primary-color, #2563eb);
         position: absolute;
-        top: 70px;
+        top: 70px; /* Adjust if your header height changes */
         right: 20px;
         width: 180px;
         border-radius: 10px;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-        padding: 18px 0;
+        /* Reduced padding for a tighter menu container */
+        padding: 10px 0; /* Reduced from 18px 0 */
         z-index: 100;
+        text-align: left; /* Align text within the dropdown */
+    }
+
+    nav ul.nav-links li {
+        width: 100%; /* Make list items take full width */
+    }
+
+    nav ul.nav-links li a {
+        /* Reduced padding for a tighter look */
+        padding: 8px 20px; /* Reduced from 10px 20px */
+        display: block; /* Make links block level */
     }
 
     nav ul.nav-links.open {
-        display: flex;
+        display: flex; /* Show the menu when 'open' class is present */
     }
 
     .nav-toggle {
-        display: block;
+        display: block; /* Show the hamburger icon */
         position: absolute;
         right: 20px;
         top: 50%;
@@ -502,20 +551,31 @@ body.dark-mode .skills-list li {
         z-index: 1100;
     }
 
-    header .container {
-        position: relative;
+    /* Hide the desktop dark mode toggle on mobile */
+    #dark-mode-toggle { /* This is the desktop toggle */
+        display: none;
+    }
+
+    /* Show the mobile dark mode toggle within the nav menu */
+    .mobile-dark-toggle {
+        display: block; /* Show the LI containing the mobile toggle */
     }
 
     body.dark-mode nav ul.nav-links {
-        background: #111 !important;
+        background: #111 !important; /* Specific dark mode background for mobile menu */
         border: 1.5px solid #3b82f6;
+    }
+
+    /* Ensure the mobile toggle button text color is correct in dark mode */
+    body.dark-mode .mobile-dark-toggle .dark-mode-toggle {
+        color: var(--text-color) !important; /* Inherit text color from dark mode variables */
     }
 }
 
-/* Show nav links on desktop */
+/* Desktop styles */
 @media (min-width: 769px) {
     nav ul.nav-links {
-        display: flex !important;
+        display: flex !important; /* Always show nav links on desktop */
         position: static;
         flex-direction: row;
         background: none;
@@ -525,7 +585,17 @@ body.dark-mode .skills-list li {
     }
 
     .nav-toggle {
-        display: none;
+        display: none; /* Hide hamburger icon on desktop */
+    }
+
+    /* Ensure desktop dark mode toggle is visible */
+    #dark-mode-toggle { /* This is the desktop toggle */
+        display: flex;
+    }
+
+    /* Hide the mobile dark mode toggle on desktop */
+    .mobile-dark-toggle {
+        display: none !important;
     }
 }
 
@@ -543,25 +613,14 @@ body.dark-mode .skills-list li {
         width: 36px;
         height: 36px;
     }
+
+    /* Adjust padding for the mobile dark mode toggle button on very small screens if needed */
+    .mobile-dark-toggle .dark-mode-toggle {
+        padding: 8px 15px; /* Slightly less padding */
+    }
 }
 
-/* Hide dark mode toggle in header controls on very small screens */
-@media (max-width: 400px) {
-    .header-controls .dark-mode-toggle {
-        display: none !important;
-    }
-    .mobile-dark-toggle {
-        display: block !important;
-        text-align: center;
-        margin-top: 10px;
-    }
-    .mobile-dark-toggle .dark-mode-toggle {
-        width: 100%;
-        font-size: 1.2rem;
-        background: none;
-        border: none;
-        color: #22c55e;
-        cursor: pointer;
-        padding: 10px 0;
-    }
+/* Dark mode text color adjustment for all toggles */
+body.dark-mode .dark-mode-toggle {
+    color: #f5f5f5; /* Adjust color for desktop toggle in dark mode */
 }
