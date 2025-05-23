@@ -327,7 +327,7 @@ footer {
 /* Dark Mode Toggle (Desktop) */
 #dark-mode-toggle { /* This is the desktop toggle */
     position: absolute;
-    top: 50%;
+    top: 20%;
     right: 20px;
     transform: translateY(-50%);
     background: none;
@@ -479,25 +479,25 @@ body.dark-mode .social-links a:hover {
 .mobile-dark-toggle {
     display: none; /* Hide the li element itself on desktop */
     /* Reduced margin-top and padding-top for a tighter look */
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separator line in menu */
-    margin-top: 5px; /* Reduced from 10px */
-    padding-top: 5px; /* Reduced from 10px */
+ /* Separator line in menu */
+    margin-top: 0px; /* Reduced from 10px */
+    padding-top: 0px; /* Reduced from 10px */
 }
 
 /* SPECIAL TREATMENT for the dark mode toggle button *inside* the mobile menu */
 .mobile-dark-toggle .dark-mode-toggle {
-    font-size: 1rem; /* Smaller font for mobile menu */
+     /* Smaller font for mobile menu */
     width: 100%; /* Make it take full width of the list item */
-    justify-content: flex-start; /* Align content to the left */
+    justify-content: right; /* Align content to the left */
     /* Reduced padding for a tighter look */
-    padding: 8px 20px; /* Reduced from 10px 20px */
+     /* Reduced from 10px 20px */
     /* Reset position and transform for mobile menu context */
     position: static;
     transform: none;
-    color: #fff; /* Ensure it's white/light in the primary color background */
+     /* Ensure it's white/light in the primary color background */
     display: flex; /* Ensure the button itself is a flex container */
     align-items: center;
-    gap: 8px; /* Space between icon and text */
+    /* Space between icon and text */
     background: transparent; /* Remove background color */
 }
 
@@ -517,7 +517,7 @@ body.dark-mode .social-links a:hover {
         flex-direction: column;
         background: var(--primary-color, #2563eb);
         position: absolute;
-        top: 70px; /* Adjust if your header height changes */
+        top: 37px; /* Adjust if your header height changes */
         right: 20px;
         width: 180px;
         border-radius: 10px;
@@ -534,7 +534,7 @@ body.dark-mode .social-links a:hover {
 
     nav ul.nav-links li a {
         /* Reduced padding for a tighter look */
-        padding: 8px 20px; /* Reduced from 10px 20px */
+        padding: 0px 20px; /* Reduced from 10px 20px */
         display: block; /* Make links block level */
     }
 
@@ -615,9 +615,7 @@ body.dark-mode .social-links a:hover {
     }
 
     /* Adjust padding for the mobile dark mode toggle button on very small screens if needed */
-    .mobile-dark-toggle .dark-mode-toggle {
-        padding: 8px 15px; /* Slightly less padding */
-    }
+
 }
 
 /* Dark mode text color adjustment for all toggles */
