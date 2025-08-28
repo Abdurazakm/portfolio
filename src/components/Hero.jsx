@@ -1,7 +1,7 @@
 import { motion} from "framer-motion";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Button } from "./ui/button";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Download } from "lucide-react";
 
 export function Hero({ profileImage }) {
   const scrollToContact = () => {
@@ -9,9 +9,8 @@ export function Hero({ profileImage }) {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToProjects = () => {
-    const element = document.getElementById('projects');
-    element?.scrollIntoView({ behavior: 'smooth' });
+  const openResume = () => {
+    window.open('https://www.canva.com/design/DAGxP832JU0/psMiPy67Ki1ByFmyz3_yCg/edit?utm_content=DAGxP832JU0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton', '_blank');
   };
 
   return (
@@ -86,10 +85,10 @@ export function Hero({ profileImage }) {
                 <Button 
                   variant="outline" 
                   className="border-white/20 text-white hover:bg-white/10 px-8 py-3 transition-all duration-300"
-                  onClick={scrollToProjects}
+                  onClick={openResume}
                 >
-                  <Github className="w-5 h-5 mr-2" />
-                  View Projects
+                  <Download className="w-5 h-5 mr-2" />
+                  Download Resume
                 </Button>
               </motion.div>
             </motion.div>
