@@ -1,9 +1,27 @@
-import { motion} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Calendar, MapPin, Award } from "lucide-react";
+import { Button } from "./ui/button";
+import { SimpleModal, SimpleModalHeader, SimpleModalContent } from "./ui/simple-modal";
+import { Calendar, MapPin, Award, Eye } from "lucide-react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function Experience() {
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+
+  // Debug function to check if modal opens
+  const handleCertificateClick = (cert) => {
+    console.log('Certificate clicked:', cert.title);
+    setSelectedCertificate(cert);
+    console.log('Selected certificate set:', cert);
+  };
+
+  const handleCloseModal = () => {
+    console.log('Closing modal');
+    setSelectedCertificate(null);
+  };
+
   const experiences = [
     {
       title: "INSA Cyber Talent Summer Camp",
@@ -27,7 +45,7 @@ export function Experience() {
     {
       degree: "Bachelor of Software Engineering",
       institution: "Addis Ababa Science and Technology University (AASTU)",
-      period: "2023 – Present",
+      period: "2022 – Present",
       status: "4th Year Student",
       description: "Comprehensive software engineering program covering algorithms, data structures, software design patterns, and modern development practices."
     }
@@ -37,32 +55,45 @@ export function Experience() {
     {
       title: "Programming Fundamentals",
       issuer: "Udacity",
-      year: "2024"
+      year: "2024",
+      image: "https://i.postimg.cc/3JCY0MCv/Screenshot-2025-08-28-132156.png",
+      description: "Comprehensive course covering fundamental programming concepts, syntax, and problem-solving techniques."
     },
     {
       title: "Android Developer Fundamentals", 
       issuer: "Udacity",
-      year: "2024"
+      year: "2024",
+      image: "https://i.postimg.cc/RCfqVDWk/Screenshot-2025-08-28-132352.png",
+      description: "Mobile application development course focusing on Android platform, UI/UX design, and app deployment."
     },
     {
       title: "Python Basics",
       issuer: "Microsoft",
-      year: "2024"
+      year: "2024",
+      image: "https://i.postimg.cc/8CZ2BNj7/Screenshot-2025-08-28-131906.png",
+      description: "Foundation course in Python programming covering data types, control structures, and object-oriented programming."
     },
     {
       title: "React Certificate",
       issuer: "GDG",
-      year: "2025"
+      year: "2024",
+      image: "https://i.postimg.cc/ZqC5k7kD/Abdurazak-Mohammed.png",
+      description: "React.js development course covering component architecture, state management, and modern React patterns."
     },
     {
       title: "Data Structures and Algorithms (DSA)",
       issuer: "Skillbridge",
-      year: "2025"
-    },
-        {
+      year: "2024",
+      image: "https://i.postimg.cc/RFwTC07y/Screenshot-2025-08-28-130126.png",
+      description: "Advanced course in data structures and algorithms, covering complexity analysis and optimization techniques."
+    }
+    ,
+    {
       title: "Data Collection",
       issuer: "The Talent Firm",
-      year: "2025"
+      year: "2025",
+      image: "https://i.postimg.cc/TYN88RRf/Screenshot-2025-08-28-131824.png",
+      description: "Course on data collection techniques, tools, and best practices for effective data gathering and analysis."
     }
   ];
 
@@ -88,7 +119,6 @@ export function Experience() {
 
   return (
     <section id="experience" className="py-20 bg-gradient-to-br from-black via-gray-900 to-blue-900 relative">
-      {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/15 via-transparent to-transparent"></div>
       
       <motion.div
@@ -110,7 +140,6 @@ export function Experience() {
         </motion.div>
         
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Experience & Training */}
           <div>
             <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
               <Calendar className="w-6 h-6 mr-3 text-blue-400" />
@@ -146,7 +175,6 @@ export function Experience() {
             </div>
           </div>
           
-          {/* Education */}
           <div>
             <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
               <Award className="w-6 h-6 mr-3 text-green-400" />
@@ -177,23 +205,141 @@ export function Experience() {
           </div>
         </div>
         
-        {/* Certificates */}
-        <div className="mt-16">
+        <motion.div variants={itemVariants} className="mt-16">
           <h3 className="text-2xl font-bold text-white mb-8 text-center">Certificates & Achievements</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {certificates.map((cert, index) => (
-              <Card key={index} className="bg-gray-800/80 backdrop-blur-sm border-blue-500/20 hover:border-purple-500/40 transition-colors">
-                <CardContent className="p-4 text-center">
-                  <h4 className="text-white font-medium mb-2">{cert.title}</h4>
-                  <p className="text-purple-400 text-sm">{cert.issuer}</p>
-                  <Badge className="bg-purple-600/10 text-purple-400 border-purple-500/30 mt-2">
-                    {cert.year}
-                  </Badge>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Card className="bg-gray-800/80 backdrop-blur-sm border-blue-500/20 hover:border-purple-500/40 transition-all duration-300 h-full">
+                  <CardContent className="p-4 text-center flex flex-col h-full">
+                    <h4 className="text-white font-medium mb-2">{cert.title}</h4>
+                    <p className="text-purple-400 text-sm mb-2">{cert.issuer}</p>
+                    <Badge className="bg-purple-600/10 text-purple-400 border-purple-500/30 mb-4">
+                      {cert.year}
+                    </Badge>
+                    <div className="mt-auto">
+                      <Button
+                        onClick={() => handleCertificateClick(cert)}
+                        size="sm"
+                        className="bg-purple-600 hover:bg-purple-700 text-white transition-all duration-300 w-full"
+                      >
+                        <Eye className="w-4 h-4 mr-2" />
+                        View Certificate
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
+
+        {/* Simple Modal Implementation */}
+        <SimpleModal
+          isOpen={!!selectedCertificate}
+          onClose={handleCloseModal}
+          className="bg-gradient-to-br from-gray-900 via-black to-blue-900 text-white border border-blue-500/30"
+        >
+          {selectedCertificate && (
+            <>
+              <SimpleModalHeader className="border-b border-blue-500/20">
+                <h2 className="text-2xl font-bold text-white mb-2">
+                  {selectedCertificate.title}
+                </h2>
+                <p className="text-gray-300 text-sm">
+                  {selectedCertificate.description}
+                </p>
+                <div className="flex items-center gap-4 text-gray-300 mt-2">
+                  <span className="text-purple-400">{selectedCertificate.issuer}</span>
+                  <Badge className="bg-purple-600/10 text-purple-400 border-purple-500/30">
+                    {selectedCertificate.year}
+                  </Badge>
+                </div>
+              </SimpleModalHeader>
+              
+              <SimpleModalContent>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                  className="relative"
+                >
+                  <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-4 rounded-lg border border-blue-500/20">
+                    <ImageWithFallback
+                      src={selectedCertificate.image}
+                      alt={`${selectedCertificate.title} Certificate`}
+                      className="w-full h-auto max-h-[50vh] object-contain rounded-lg shadow-2xl"
+                    />
+                    <div className="absolute top-2 left-2 w-6 h-6 border-l-2 border-t-2 border-blue-400/60"></div>
+                    <div className="absolute top-2 right-2 w-6 h-6 border-r-2 border-t-2 border-blue-400/60"></div>
+                    <div className="absolute bottom-2 left-2 w-6 h-6 border-l-2 border-b-2 border-purple-400/60"></div>
+                    <div className="absolute bottom-2 right-2 w-6 h-6 border-r-2 border-b-2 border-purple-400/60"></div>
+                  </div>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                  className="mt-6 p-4 bg-gray-800/50 rounded-lg border border-blue-500/20"
+                >
+                  <h4 className="text-white font-medium mb-2">About this Certificate</h4>
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                    {selectedCertificate.description}
+                  </p>
+                  
+                  <div className="mt-4 pt-4 border-t border-gray-700/50">
+                    <h5 className="text-white font-medium mb-2">Certificate Details</h5>
+                    <ul className="text-gray-300 text-sm space-y-2">
+                      <li className="flex justify-between">
+                        <span>Issued by:</span>
+                        <span className="text-purple-400">{selectedCertificate.issuer}</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Year:</span>
+                        <span className="text-blue-400">{selectedCertificate.year}</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Status:</span>
+                        <span className="text-green-400">Completed</span>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="mt-4 pt-4 border-t border-gray-700/50">
+                    <h5 className="text-white font-medium mb-2">Skills Gained</h5>
+                    <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                      This certificate demonstrates proficiency in key concepts and practical applications 
+                      related to {selectedCertificate.title.toLowerCase()}. The coursework included hands-on 
+                      projects, assessments, and real-world problem-solving scenarios.
+                    </p>
+                    
+                    <h6 className="text-white font-medium mb-2 mt-4">Key Learning Outcomes:</h6>
+                    <ul className="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                      <li>Understanding of fundamental concepts and principles</li>
+                      <li>Practical application through hands-on projects</li>
+                      <li>Problem-solving techniques and methodologies</li>
+                      <li>Industry best practices and standards</li>
+                      <li>Real-world implementation strategies</li>
+                    </ul>
+                    
+                    <h6 className="text-white font-medium mb-2 mt-4">Certification Value:</h6>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      This certification validates expertise in {selectedCertificate.title.toLowerCase()} and 
+                      demonstrates commitment to professional development and continuous learning. 
+                      It represents successful completion of comprehensive coursework and assessments.
+                    </p>
+                  </div>
+                </motion.div>
+              </SimpleModalContent>
+            </>
+          )}
+        </SimpleModal>
       </motion.div>
     </section>
   );
