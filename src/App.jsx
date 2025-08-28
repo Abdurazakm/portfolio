@@ -9,11 +9,11 @@ import { Experience } from "./components/Experience.jsx";
 import { Contact } from "./components/Contact.jsx";
 import { Footer } from "./components/Footer.jsx";
 import { Skeleton } from "./components/ui/skeleton";
-import abdurazak from "../public/abdurazak.png"
+// import abdurazak from "../public/abdurazak.png"
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const profileImage = "abdurazak.png"
+  const profileImage = "https://i.postimg.cc/MTfSwPY4/abdurazak.png"
   // Simulate loading time
   useEffect(() => {
     const timer = setTimeout(() => {
