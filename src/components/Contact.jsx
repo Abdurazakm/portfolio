@@ -116,7 +116,7 @@ export function Contact() {
                     <div>
                       <h4 className="text-white font-medium">LinkedIn</h4>
                       <a 
-                        href="https://linkedin.com/in/abdurazakmohammed"
+                        href="https://linkedin.com/in/abdurazak-ledamo-5ba626357"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-400 hover:text-purple-400 transition-colors"

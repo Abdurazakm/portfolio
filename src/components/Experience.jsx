@@ -27,7 +27,7 @@ export function Experience() {
     {
       degree: "Bachelor of Software Engineering",
       institution: "Addis Ababa Science and Technology University (AASTU)",
-      period: "2022 – Present",
+      period: "2023 – Present",
       status: "4th Year Student",
       description: "Comprehensive software engineering program covering algorithms, data structures, software design patterns, and modern development practices."
     }
@@ -52,12 +52,12 @@ export function Experience() {
     {
       title: "React Certificate",
       issuer: "GDG",
-      year: "2024"
+      year: "2025"
     },
     {
       title: "Data Structures and Algorithms (DSA)",
       issuer: "Skillbridge",
-      year: "2024"
+      year: "2025"
     }
   ];
 

@@ -9,11 +9,11 @@ import { Experience } from "./components/Experience.jsx";
 import { Contact } from "./components/Contact.jsx";
 import { Footer } from "./components/Footer.jsx";
 import { Skeleton } from "./components/ui/skeleton";
+import abdurazak from "../public/abdurazak.png"
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const profileImage = "https://images.unsplash.com/photo-1737574107736-9e02ca5d5387?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBzb2Z0d2FyZSUyMGRldmVsb3BlciUyMHBvcnRyYWl0fGVufDF8fHx8MTc1NjI5MDAwN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-
+  const profileImage = "abdurazak.png"
   // Simulate loading time
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -66,7 +66,7 @@ export default function App() {
         className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-blue-900"
       >
         <Header />
-        <main className="pt-20">
+        <main className="pt-10">
           <Hero profileImage={profileImage} />
           <About />
           <Skills />

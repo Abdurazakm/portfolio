@@ -21,7 +21,7 @@ export function Skills() {
     {
       title: "Other Technologies",
       skills: ["Git/GitHub", "Tailwind CSS", "REST APIs"],
-      color: "bg-orange-600/10 text-orange-400 border-orange-500/30"
+      color: "bg-yellow-600/10 text-yellow-400 border-yellow-500/30"
     }
   ];
 

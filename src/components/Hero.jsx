@@ -102,8 +102,8 @@ export function Hero({ profileImage }) {
               className="flex gap-4 justify-center lg:justify-start"
             >
               {[
-                { href: "https://github.com/AbdurazakMohammed", icon: Github, label: "GitHub" },
-                { href: "https://linkedin.com/in/abdurazakmohammed", icon: Linkedin, label: "LinkedIn" },
+                { href: "https://github.com/Abdurazakm", icon: Github, label: "GitHub" },
+                { href: "https://linkedin.com/in/abdurazak-ledamo-5ba626357", icon: Linkedin, label: "LinkedIn" },
                 { href: "mailto:abdurazakm343@gmail.com", icon: Mail, label: "Email" }
               ].map((social, index) => (
                 <motion.a

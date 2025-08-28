@@ -185,7 +185,7 @@ export function Projects() {
             <Button 
               variant="outline" 
               className="border-blue-500/30 text-blue-400 hover:bg-blue-600/10 hover:border-blue-500/50 transition-all duration-300"
-              onClick={() => window.open('https://github.com/AbdurazakMohammed', '_blank')}
+              onClick={() => window.open('https://github.com/Abdurazakm', '_blank')}
             >
               <Github className="w-5 h-5 mr-2" />
               View All Projects on GitHub
