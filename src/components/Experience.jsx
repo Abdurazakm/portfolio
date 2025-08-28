@@ -58,6 +58,11 @@ export function Experience() {
       title: "Data Structures and Algorithms (DSA)",
       issuer: "Skillbridge",
       year: "2025"
+    },
+        {
+      title: "Data Collection",
+      issuer: "The Talent Firm",
+      year: "2025"
     }
   ];
 

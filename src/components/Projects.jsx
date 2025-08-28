@@ -10,28 +10,28 @@ export function Projects() {
       title: "Automated Agency Client Information System",
       description: "PHP & MySQL based system for client registration, management, and reporting. Features comprehensive client data management, automated reporting, and secure authentication.",
       tech: ["PHP", "MySQL", "HTML/CSS", "JavaScript"],
-      github: "#",
+      github: "https://github.com/Abdurazakm/IP2-PROJECT",
       demo: "#"
     },
     {
       title: "Reunit Hub",
       description: "React + Django web app for reconnecting lost people, presented at AASTU Tech Fest. Includes user authentication, search functionality, and real-time notifications.",
       tech: ["React.js", "Django", "Python", "PostgreSQL"],
-      github: "#",
+      github: "https://github.com/Eyuel763/ReuniteHub",
       demo: "#"
     },
     {
-      title: "Restaurant Management System",
-      description: "Java OOP project managing orders, staff, and payments. Features inventory management, order tracking, and staff scheduling with clean architecture.",
-      tech: ["Java", "OOP", "MySQL", "JavaFX"],
-      github: "#",
+      title: "EthioHeritage360: The Ethiopian Digital Heritage Ecosystem",
+      description: "Developed components of a digital platform to preserve, manage, and promote Ethiopian heritage. Features include a digital archive, interactive maps, and user-generated content.",
+      tech: ["React.js", "tailwindcss", "MongoDB", "Express.js", "Node.js"],
+      github: "https://github.com/Summer-Camp-Project/Project-for-G25",
       demo: "#"
     },
     {
       title: "VoiceLocal",
       description: "Ongoing React + Node.js project for raising and voting on local community issues. Real-time voting system with geolocation-based issue reporting.",
       tech: ["React.js", "Node.js", "MongoDB", "Express.js", "Socket.io"],
-      github: "#",
+      github: "https://github.com/Abdurazakm/voice-Local",
       demo: "#",
       status: "In Development"
     }

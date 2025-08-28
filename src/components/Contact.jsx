@@ -10,9 +10,9 @@ export function Contact() {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
+        delayChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -20,15 +20,18 @@ export function Contact() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 via-black to-blue-900 relative">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-br from-gray-900 via-black to-blue-900 relative"
+    >
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent"></div>
-      
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -49,23 +52,26 @@ export function Contact() {
             variants={itemVariants}
             className="text-gray-400 mt-6 max-w-2xl mx-auto"
           >
-            I'm always interested in new opportunities and collaborations. 
-            Feel free to reach out if you'd like to work together!
+            I'm always interested in new opportunities and collaborations. Feel
+            free to reach out if you'd like to work together!
           </motion.p>
         </motion.div>
-        
+
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">
+                Let's Connect
+              </h3>
               <p className="text-gray-300 mb-8 leading-relaxed">
-                Whether you have a project in mind, want to collaborate, or just want to say hello, 
-                I'd love to hear from you. I'm currently open to new opportunities and always 
-                excited to work on interesting projects.
+                Whether you have a project in mind, want to collaborate, or just
+                want to say hello, I'd love to hear from you. I'm currently open
+                to new opportunities and always excited to work on interesting
+                projects.
               </p>
             </div>
-            
+
             <div className="space-y-4">
               <Card className="bg-gray-800/80 backdrop-blur-sm border-blue-500/20 hover:border-blue-500/40 transition-colors">
                 <CardContent className="p-4">
@@ -75,7 +81,7 @@ export function Contact() {
                     </div>
                     <div>
                       <h4 className="text-white font-medium">Email</h4>
-                      <a 
+                      <a
                         href="mailto:abdurazakm343@gmail.com"
                         className="text-gray-400 hover:text-blue-400 transition-colors"
                       >
@@ -85,7 +91,7 @@ export function Contact() {
                   </div>
                 </CardContent>
               </Card>
-              
+
               <Card className="bg-gray-800/80 backdrop-blur-sm border-blue-500/20 hover:border-green-500/40 transition-colors">
                 <CardContent className="p-4">
                   <div className="flex items-center gap-4">
@@ -94,7 +100,7 @@ export function Contact() {
                     </div>
                     <div>
                       <h4 className="text-white font-medium">GitHub</h4>
-                      <a 
+                      <a
                         href="https://github.com/Abdurazakm"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -106,7 +112,7 @@ export function Contact() {
                   </div>
                 </CardContent>
               </Card>
-              
+
               <Card className="bg-gray-800/80 backdrop-blur-sm border-blue-500/20 hover:border-purple-500/40 transition-colors">
                 <CardContent className="p-4">
                   <div className="flex items-center gap-4">
@@ -115,7 +121,7 @@ export function Contact() {
                     </div>
                     <div>
                       <h4 className="text-white font-medium">LinkedIn</h4>
-                      <a 
+                      <a
                         href="https://linkedin.com/in/abdurazak-ledamo-5ba626357"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -127,7 +133,7 @@ export function Contact() {
                   </div>
                 </CardContent>
               </Card>
-              
+
               <Card className="bg-gray-800/80 backdrop-blur-sm border-blue-500/20 hover:border-orange-500/40 transition-colors">
                 <CardContent className="p-4">
                   <div className="flex items-center gap-4">
@@ -136,63 +142,78 @@ export function Contact() {
                     </div>
                     <div>
                       <h4 className="text-white font-medium">Location</h4>
-                      <p className="text-gray-400">📍sidama Hawassa, Ethiopia</p>
+                      <p className="text-gray-400">
+                        📍sidama Hawassa, Ethiopia
+                      </p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
           </div>
-          
+
           {/* Quick Contact Form */}
           <div className="bg-gray-800/80 backdrop-blur-sm rounded-lg p-8 border border-blue-500/20">
-            <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
-            <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-white mb-6">
+              Send a Message
+            </h3>
+            <form
+              action="https://formspree.io/f/mdkgjpjd"
+              method="POST"
+              className="space-y-6"
+            >
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="text-white mb-2 block">Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
+                    name="name"
                     className="w-full p-3 bg-gray-700/50 border border-blue-500/20 rounded-lg text-black focus:border-blue-500 focus:outline-none"
                     placeholder="Your Name"
+                    required
                   />
                 </div>
                 <div>
                   <label className="text-white mb-2 block">Email</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
+                    name="email"
                     className="w-full p-3 bg-gray-700/50 border border-blue-500/20 rounded-lg text-black focus:border-blue-500 focus:outline-none"
                     placeholder="your.email@example.com"
+                    required
                   />
                 </div>
               </div>
-              
+
               <div>
                 <label className="text-white mb-2 block">Subject</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
+                  name="subject"
                   className="w-full p-3 bg-gray-700/50 border border-blue-500/20 rounded-lg text-black focus:border-blue-500 focus:outline-none"
                   placeholder="Project Collaboration"
                 />
               </div>
-              
+
               <div>
                 <label className="text-white mb-2 block">Message</label>
-                <textarea 
+                <textarea
+                  name="message"
                   rows={5}
                   className="w-full p-3 bg-gray-700/50 border border-blue-500/20 rounded-lg text-black focus:border-blue-500 focus:outline-none resize-none"
                   placeholder="Tell me about your project or just say hello!"
+                  required
                 />
               </div>
-              
-              <Button 
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
-                onClick={() => 'https://formspree.io/f/mdkgjpjd'}
+
+              <button
+                type="submit"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 flex items-center justify-center rounded-lg"
               >
                 <Mail className="w-5 h-5 mr-2" />
                 Send Message
-              </Button>
-            </div>
+              </button>
+            </form>
           </div>
         </div>
       </motion.div>
