@@ -263,8 +263,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 **Abdurazak Mohammed**
 - Portfolio: [Live Demo](https://portfolio-1i5s-git-version-2-abdurazakms-projects.vercel.app/)
-- GitHub: [@abdurazakms](https://github.com/abdurazakms)
-- LinkedIn: [Abdurazak Mohammed](https://linkedin.com/in/abdurazak-mohammed)
+- GitHub: [@abdurazakm](https://github.com/abdurazakm)
+- LinkedIn: [Abdurazak Mohammed](https://linkedin.com/in/abdurazak-ledamo-5ba626357)
 
 ## 🙏 Acknowledgments
 
