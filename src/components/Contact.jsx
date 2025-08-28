@@ -100,7 +100,7 @@ export function Contact() {
                         rel="noopener noreferrer"
                         className="text-gray-400 hover:text-green-400 transition-colors"
                       >
-                        github.com/AbdurazakMohammed
+                        github.com/Abdurazakm
                       </a>
                     </div>
                   </div>
@@ -121,7 +121,7 @@ export function Contact() {
                         rel="noopener noreferrer"
                         className="text-gray-400 hover:text-purple-400 transition-colors"
                       >
-                        linkedin.com/in/abdurazakmohammed
+                        linkedin.com/in/abdurazak-ledamo-5ba626357
                       </a>
                     </div>
                   </div>
@@ -136,7 +136,7 @@ export function Contact() {
                     </div>
                     <div>
                       <h4 className="text-white font-medium">Location</h4>
-                      <p className="text-gray-400">Addis Ababa, Ethiopia</p>
+                      <p className="text-gray-400">📍sidama Hawassa, Ethiopia</p>
                     </div>
                   </div>
                 </CardContent>

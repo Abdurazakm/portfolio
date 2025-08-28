@@ -66,7 +66,7 @@ export default function App() {
         className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-blue-900"
       >
         <Header />
-        <main className="pt-10">
+        <main className="pt-12">
           <Hero profileImage={profileImage} />
           <About />
           <Skills />
