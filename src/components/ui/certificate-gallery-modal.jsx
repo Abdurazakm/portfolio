@@ -46,7 +46,7 @@ export function CertificateGalleryModal({ isOpen, onClose, certificate }) {
           {certificate.title}
         </h2>
         <p className="text-gray-300 text-sm">{certificate.description}</p>
-        <div className="flex items-center gap-4 text-gray-300 mt-2">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-gray-300 mt-2">
           <span className="text-purple-400">{certificate.issuer}</span>
           <Badge className="bg-purple-600/10 text-purple-400 border-purple-500/30">
             {certificate.year}
@@ -55,7 +55,7 @@ export function CertificateGalleryModal({ isOpen, onClose, certificate }) {
             {currentImageIndex + 1} of {totalImages} certificates
           </Badge>
           {certificate.certificateNames && (
-            <Badge className="bg-green-600/10 text-green-400 border-green-500/30">
+            <Badge className="bg-green-600/10 text-green-400 border-green-500/30 text-xs sm:text-sm max-w-full truncate">
               {certificate.certificateNames[currentImageIndex]}
             </Badge>
           )}
