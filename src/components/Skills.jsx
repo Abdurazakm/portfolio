@@ -26,12 +26,22 @@ export function Skills() {
   ];
 
   const proficiencyLevels = [
-    { skill: "Java", level: 90 },
+    { skill: "c++", level: 85 },
+    { skill: "Java", level: 85 },
     { skill: "Python", level: 85 },
     { skill: "JavaScript", level: 80 },
+    { skill: "PHP", level: 75 },
     { skill: "React.js", level: 75 },
     { skill: "Node.js", level: 70 },
-    { skill: "MongoDB", level: 75 }
+    { skill: "MongoDB", level: 75 },
+    { skill: "Node.js", level: 70 },
+    { skill: "Express.js", level: 70 },
+    { skill: "Django", level: 65 },
+    { skill: "MySQL", level: 70 },
+    { skill: "PostgreSQL", level: 65 },
+    { skill: "Git/GitHub", level: 80 },
+    { skill: "Tailwind CSS", level: 70 },
+    { skill: "REST APIs", level: 30 }
   ];
 
   const containerVariants = {

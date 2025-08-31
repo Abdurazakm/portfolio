@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart, MapPin } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -99,7 +99,8 @@ export function Footer() {
                 abdurazakm343@gmail.com
               </p>
               <p className="text-gray-400">
-                📍 Sidama Hawassa, Ethiopia
+              <MapPin className="w-6 h-6 inline mr-2" />
+                📍Sidama Hawassa, Ethiopia
               </p>
               <p className="text-gray-400">
                 🎓 AASTU Software Engineering Student

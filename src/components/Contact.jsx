@@ -138,7 +138,7 @@ export function Contact() {
                 <CardContent className="p-4">
                   <div className="flex items-center gap-4">
                     <div className="p-3 bg-orange-600/10 rounded-lg">
-                      <MapPin className="w-6 h-6 text-orange-400" />
+                      <MapPin className="w-6 h-6 text-yellow-400" />
                     </div>
                     <div>
                       <h4 className="text-white font-medium">Location</h4>
