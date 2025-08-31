@@ -100,7 +100,7 @@ export function Footer() {
               </p>
               <p className="text-gray-400">
               <MapPin className="w-6 h-6 inline mr-2" />
-                📍Sidama Hawassa, Ethiopia
+                Sidama Hawassa, Ethiopia
               </p>
               <p className="text-gray-400">
                 🎓 AASTU Software Engineering Student

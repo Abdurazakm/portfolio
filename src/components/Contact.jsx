@@ -143,7 +143,7 @@ export function Contact() {
                     <div>
                       <h4 className="text-white font-medium">Location</h4>
                       <p className="text-gray-400">
-                        📍sidama Hawassa, Ethiopia
+                        sidama Hawassa, Ethiopia
                       </p>
                     </div>
                   </div>
