@@ -10,7 +10,7 @@ export function Hero({ profileImage }) {
   };
 
   const openResume = () => {
-    window.open('https://www.canva.com/design/DAGxP832JU0/psMiPy67Ki1ByFmyz3_yCg/edit?utm_content=DAGxP832JU0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton', '_blank');
+    window.open('https://drive.google.com/file/d/10Ue5s0OPgBBzZG8IR5UO4K63EQqHq3Zr/view?usp=sharing', '_blank');
   };
 
   return (
