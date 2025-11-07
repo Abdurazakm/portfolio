@@ -34,14 +34,13 @@ export function Skills() {
     { skill: "React.js", level: 75 },
     { skill: "Node.js", level: 70 },
     { skill: "MongoDB", level: 75 },
-    { skill: "Node.js", level: 70 },
     { skill: "Express.js", level: 70 },
     { skill: "Django", level: 65 },
     { skill: "MySQL", level: 70 },
     { skill: "PostgreSQL", level: 65 },
     { skill: "Git/GitHub", level: 80 },
     { skill: "Tailwind CSS", level: 70 },
-    { skill: "REST APIs", level: 30 }
+    { skill: "REST APIs", level: 75 }
   ];
 
   const containerVariants = {
