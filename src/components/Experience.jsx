@@ -61,6 +61,14 @@ export function Experience() {
 
   const certificates = [
     {
+      title: "Software Engineering – Backend Web Development",
+      issuer: "ALX Africa",
+      year: "2025",
+      image: "https://i.postimg.cc/rF0m2xBZ/70-back-end-web-development-certificate-abdurazak-mohammed.png",
+      description:
+        "Graduated from the ALX Software Engineering Program specializing in backend web development, mastering Python, Django, APIs, and software design principles.",
+    },
+    {
       title: "Programming Fundamentals",
       issuer: "Udacity",
       year: "2024",
@@ -108,14 +116,14 @@ export function Experience() {
       description:
         "Course on data collection techniques, tools, and best practices for effective data gathering and analysis.",
     },
-  {
-    title: "Professional Foundations",
-    issuer: "ALX",
-    year: "2025",
-    image: "https://i.postimg.cc/kgSZ9Dff/alx-pf.jpg",
-    description:
-      "Professional Foundations program focusing on essential workplace skills, collaboration, leadership, and strategic use of technology to succeed in software engineering careers.",
-  },
+    {
+      title: "Professional Foundations",
+      issuer: "ALX",
+      year: "2025",
+      image: "https://i.postimg.cc/kgSZ9Dff/alx-pf.jpg",
+      description:
+        "Professional Foundations program focusing on essential workplace skills, collaboration, leadership, and strategic use of technology to succeed in software engineering careers.",
+    },
     {
       title: "e-SHE Certificate",
       issuer: "e-SHE Online Learning",
