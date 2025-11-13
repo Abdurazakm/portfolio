@@ -25,23 +25,23 @@ export function Skills() {
     }
   ];
 
-  const proficiencyLevels = [
-    { skill: "c++", level: 85 },
-    { skill: "Java", level: 85 },
-    { skill: "Python", level: 85 },
-    { skill: "JavaScript", level: 80 },
-    { skill: "PHP", level: 75 },
-    { skill: "React.js", level: 75 },
-    { skill: "Node.js", level: 70 },
-    { skill: "MongoDB", level: 75 },
-    { skill: "Express.js", level: 70 },
-    { skill: "Django", level: 65 },
-    { skill: "MySQL", level: 70 },
-    { skill: "PostgreSQL", level: 65 },
-    { skill: "Git/GitHub", level: 80 },
-    { skill: "Tailwind CSS", level: 70 },
-    { skill: "REST APIs", level: 75 }
-  ];
+  // const proficiencyLevels = [
+  //   { skill: "c++", level: 85 },
+  //   { skill: "Java", level: 85 },
+  //   { skill: "Python", level: 85 },
+  //   { skill: "JavaScript", level: 80 },
+  //   { skill: "PHP", level: 75 },
+  //   { skill: "React.js", level: 75 },
+  //   { skill: "Node.js", level: 70 },
+  //   { skill: "MongoDB", level: 75 },
+  //   { skill: "Express.js", level: 70 },
+  //   { skill: "Django", level: 65 },
+  //   { skill: "MySQL", level: 70 },
+  //   { skill: "PostgreSQL", level: 65 },
+  //   { skill: "Git/GitHub", level: 80 },
+  //   { skill: "Tailwind CSS", level: 70 },
+  //   { skill: "REST APIs", level: 75 }
+  // ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -132,7 +132,7 @@ export function Skills() {
         </motion.div>
         
         {/* Progress bars for key skills */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -171,10 +171,10 @@ export function Skills() {
                   />
                 </div>
               </motion.div>
-            ))}
-          </div>
+            ))} */}
+          {/* </div> */}
         </motion.div>
-      </motion.div>
+      {/* </motion.div> */}
     </section>
   );
 }
