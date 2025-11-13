@@ -10,7 +10,7 @@ export function Hero({ profileImage }) {
   };
 
   const openResume = () => {
-    window.open('https://drive.google.com/file/d/10Ue5s0OPgBBzZG8IR5UO4K63EQqHq3Zr/view?usp=sharing', '_blank');
+    window.open('https://drive.google.com/file/d/1u-I0UB02DKyJAxHK6h_rUpzlSbw01UUc/view?usp=sharing', '_blank');
   };
 
   return (
