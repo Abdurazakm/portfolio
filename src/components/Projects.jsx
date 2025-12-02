@@ -7,7 +7,7 @@ import { Github, ExternalLink } from "lucide-react";
 export function Projects() {
   const projects = [
     {
-      title: "Fast Delivery",
+      title: "Fetan Delivery",
       description:
         "A full-stack food delivery platform that streamlines restaurant orders, admin management, and SMS notifications. Includes real-time service availability, order tracking, and admin dashboards.",
       tech: ["React", "Node.js", "Express", "Prisma", "PostgreSQL"],
