@@ -12,7 +12,7 @@ export function Projects() {
         "A full-stack food delivery platform that streamlines restaurant orders, admin management, and SMS notifications. Includes real-time service availability, order tracking, and admin dashboards.",
       tech: ["React", "Node.js", "Express", "Prisma", "PostgreSQL"],
       github: "https://github.com/Abdurazakm/Fast-Delivery",
-      demo: "https://ertibdelivery.netlify.app/",
+      demo: "https://fetandelivery.netlify.app/",
     },
     {
       title: "Automated Agency Client Information System",
