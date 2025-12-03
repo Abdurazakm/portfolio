@@ -43,7 +43,7 @@ export function Projects() {
       description:
         "A community engagement platform allowing users to raise and vote on local issues. Features real-time voting, geolocation-based reporting, and live updates. Developed with a full-stack approach using Django for the backend and React with Tailwind CSS for the frontend.",
       tech: ["Django", "React", "Tailwind CSS", "MySQL"],
-      github: "https://github.com/Abdurazakm/voice-Local",
+      github: "https://github.com/Abdurazakm/VoiceLocal",
       demo: "#", 
       status: "Completed",
     },
