@@ -29,6 +29,15 @@ export function Experience() {
 
   const experiences = [
     {
+      title: "AASTU GDG Club",
+      role: "Web3 Learner",
+      period: "2026",
+      location: "AASTU",
+      description:
+        "Currently learning Web3 concepts, blockchain fundamentals, and decentralized application development with the AASTU GDG Club.",
+      type: "Learning",
+    },
+    {
       title: "INSA Cyber Talent Summer Camp",
       role: "Development Department",
       period: "Summer 2025",
@@ -175,7 +184,7 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="py-20 bg-gradient-to-br from-black via-gray-900 to-blue-900 relative"
+      className="py-16 sm:py-20 bg-gradient-to-br from-black via-gray-900 to-blue-900 relative"
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/15 via-transparent to-transparent"></div>
 
@@ -184,10 +193,10 @@ export function Experience() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={containerVariants}
-        className="container mx-auto px-6 relative z-10"
+        className="container mx-auto px-4 sm:px-6 relative z-10"
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Experience & Education
           </h2>
           <motion.div
@@ -199,9 +208,9 @@ export function Experience() {
           />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 flex items-center">
               <Calendar className="w-6 h-6 mr-3 text-blue-400" />
               Experience & Training
             </h3>
@@ -211,19 +220,19 @@ export function Experience() {
                   key={index}
                   className="bg-gray-900/80 backdrop-blur-sm border-blue-500/20 hover:border-blue-500/40 transition-colors"
                 >
-                  <CardContent className="p-6">
-                    <div className="flex justify-between items-start mb-3">
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-3">
                       <div>
-                        <h4 className="text-white font-semibold text-lg">
+                        <h4 className="text-white font-semibold text-base sm:text-lg">
                           {exp.title}
                         </h4>
-                        <p className="text-blue-400">{exp.role}</p>
+                        <p className="text-blue-400 text-sm sm:text-base">{exp.role}</p>
                       </div>
-                      <Badge className="bg-blue-600/10 text-blue-400 border-blue-500/30">
+                      <Badge className="bg-blue-600/10 text-blue-400 border-blue-500/30 self-start">
                         {exp.type}
                       </Badge>
                     </div>
-                    <div className="flex items-center gap-4 text-gray-400 text-sm mb-3">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-gray-400 text-sm mb-3">
                       <span className="flex items-center">
                         <Calendar className="w-4 h-4 mr-1" />
                         {exp.period}
@@ -241,7 +250,7 @@ export function Experience() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 flex items-center">
               <Award className="w-6 h-6 mr-3 text-green-400" />
               Education
             </h3>
@@ -251,15 +260,15 @@ export function Experience() {
                   key={index}
                   className="bg-gray-900/80 backdrop-blur-sm border-blue-500/20 hover:border-green-500/40 transition-colors"
                 >
-                  <CardContent className="p-6">
-                    <div className="flex justify-between items-start mb-3">
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-3">
                       <div>
-                        <h4 className="text-white font-semibold text-lg">
+                        <h4 className="text-white font-semibold text-base sm:text-lg">
                           {edu.degree}
                         </h4>
-                        <p className="text-green-400">{edu.institution}</p>
+                        <p className="text-green-400 text-sm sm:text-base">{edu.institution}</p>
                       </div>
-                      <Badge className="bg-green-600/10 text-green-400 border-green-500/30">
+                      <Badge className="bg-green-600/10 text-green-400 border-green-500/30 self-start">
                         {edu.status}
                       </Badge>
                     </div>
@@ -275,11 +284,11 @@ export function Experience() {
           </div>
         </div>
 
-        <motion.div variants={itemVariants} className="mt-16">
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">
+        <motion.div variants={itemVariants} className="mt-14 sm:mt-16">
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 text-center">
             Certificates & Achievements
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {certificates.map((cert, index) => (
               <motion.div
                 key={index}
@@ -389,19 +398,19 @@ export function Experience() {
                       Certificate Details
                     </h5>
                     <ul className="text-gray-300 text-sm space-y-2">
-                      <li className="flex justify-between">
+                      <li className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-2">
                         <span>Issued by:</span>
                         <span className="text-purple-400">
                           {selectedCertificate.issuer}
                         </span>
                       </li>
-                      <li className="flex justify-between">
+                      <li className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-2">
                         <span>Year:</span>
                         <span className="text-blue-400">
                           {selectedCertificate.year}
                         </span>
                       </li>
-                      <li className="flex justify-between">
+                      <li className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-2">
                         <span>Status:</span>
                         <span className="text-green-400">Completed</span>
                       </li>

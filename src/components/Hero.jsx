@@ -38,7 +38,7 @@ export function Hero({ profileImage }) {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
             >
-              Abdurazak Mohammed Ledamo
+              Abdurazak Mohammed 
             </motion.h1>
             
             <motion.h2
@@ -47,7 +47,7 @@ export function Hero({ profileImage }) {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-2xl lg:text-3xl text-blue-400 mb-6"
             >
-              Software Engineering Student | Backend Developer | Frontend Enthusiast
+              Software Engineering Student | Backend Developer | Web3 Learner
             </motion.h2>
             
             <motion.p
@@ -102,7 +102,7 @@ export function Hero({ profileImage }) {
             >
               {[
                 { href: "https://github.com/Abdurazakm", icon: Github, label: "GitHub" },
-                { href: "https://linkedin.com/in/abdurazak-ledamo-5ba626357", icon: Linkedin, label: "LinkedIn" },
+                { href: "https://www.linkedin.com/in/abdurazak-mohammed-a437b62b6/", icon: Linkedin, label: "LinkedIn" },
                 { href: "mailto:abdurazakm343@gmail.com", icon: Mail, label: "Email" }
               ].map((social, index) => (
                 <motion.a

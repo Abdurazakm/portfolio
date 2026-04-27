@@ -1,9 +1,14 @@
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Mail, Github, Linkedin, MapPin } from "lucide-react";
 
 export function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [toast, setToast] = useState(null);
+  const toastTimerRef = useRef(null);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -24,6 +29,56 @@ export function Contact() {
     },
   };
 
+  useEffect(() => {
+    return () => {
+      if (toastTimerRef.current) {
+        clearTimeout(toastTimerRef.current);
+      }
+    };
+  }, []);
+
+  const showToast = (type, message) => {
+    if (toastTimerRef.current) {
+      clearTimeout(toastTimerRef.current);
+    }
+
+    setToast({ type, message });
+
+    toastTimerRef.current = setTimeout(() => {
+      setToast(null);
+    }, 4000);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mdkgjpjd", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      form.reset();
+      showToast("success", "Message sent successfully. I'll get back to you soon.");
+    } catch (error) {
+      showToast("error", "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -31,6 +86,20 @@ export function Contact() {
     >
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent"></div>
+
+      {toast && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] w-[calc(100%-2rem)] max-w-sm">
+          <div
+            className={`rounded-xl border px-4 py-3 shadow-2xl text-white ${
+              toast.type === "success"
+                ? "bg-emerald-600 border-emerald-300"
+                : "bg-rose-600 border-rose-300"
+            }`}
+          >
+            <p className="text-sm font-medium">{toast.message}</p>
+          </div>
+        </div>
+      )}
 
       <motion.div
         initial="hidden"
@@ -158,8 +227,7 @@ export function Contact() {
               Send a Message
             </h3>
             <form
-              action="https://formspree.io/f/mdkgjpjd"
-              method="POST"
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
               <div className="grid md:grid-cols-2 gap-4">
@@ -208,10 +276,11 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 flex items-center justify-center rounded-lg"
+                disabled={isSubmitting}
+                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-700/60 disabled:cursor-not-allowed text-white py-3 flex items-center justify-center rounded-lg transition-colors"
               >
                 <Mail className="w-5 h-5 mr-2" />
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>

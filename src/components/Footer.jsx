@@ -27,7 +27,7 @@ export function Footer() {
                 <Github className="w-5 h-5 text-gray-400 hover:text-white" />
               </a>
               <a
-                href="https://linkedin.com/in/abdurazak-ledamo-5ba626357"
+                href="https://www.linkedin.com/in/abdurazak-mohammed-a437b62b6/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-gray-800/50 hover:bg-blue-600/20 transition-colors"

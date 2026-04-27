@@ -73,7 +73,7 @@ export function About() {
               variants={itemVariants}
               className="text-lg leading-relaxed"
             >
-              Currently learning Node.js, Express.js, and MongoDB while also exploring React.js for frontend.
+              Currently learning AI backend engineering and Web3 with AASTU GDG Club.
             </motion.p>
           </motion.div>
           
@@ -134,7 +134,7 @@ export function About() {
                     </motion.div>
                     <div>
                       <h3 className="text-white font-semibold mb-2">Currently Learning</h3>
-                      <p className="text-gray-400">Node.js, Express.js, MongoDB, React.js</p>
+                      <p className="text-gray-400">AI backend engineering and Web3 with AASTU GDG Club</p>
                     </div>
                   </div>
                 </CardContent>
