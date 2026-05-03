@@ -47,7 +47,7 @@ export function Hero({ profileImage }) {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-2xl lg:text-3xl text-blue-400 mb-6"
             >
-              Software Engineering Student | Backend Developer | Web3 Learner
+              Software Engineering Student | Fullstack Developer | Web3 Learner
             </motion.h2>
             
             <motion.p
