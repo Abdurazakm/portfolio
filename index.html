@@ -5,6 +5,19 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#101113" />
+    <script>
+      (() => {
+        let preference;
+        try { preference = localStorage.getItem("portfolio-theme"); } catch {}
+        const theme = preference === "light" || preference === "dark"
+          ? preference
+          : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        document.querySelector('meta[name="theme-color"]').content =
+          theme === "light" ? "#f7f9fc" : "#101113";
+      })();
+    </script>
     <meta
       name="description"
       content="Abdurazak Mohammed — full-stack developer building useful web applications, thoughtful interfaces, and backend systems. Explore selected projects and get in touch."

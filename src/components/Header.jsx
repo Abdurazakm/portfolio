@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Menu, Pause, Play, X } from "lucide-react";
+import { ArrowUpRight, Menu, Moon, Pause, Play, Sun, X } from "lucide-react";
 
-export function Header({ networkPaused, onToggleNetwork }) {
+export function Header({ networkPaused, onToggleNetwork, theme, onToggleTheme }) {
   const [open, setOpen] = useState(false);
   const toggle = useRef(null);
   useEffect(() => {
@@ -57,6 +57,15 @@ export function Header({ networkPaused, onToggleNetwork }) {
             Let’s talk <ArrowUpRight size={16} />
           </a>
         </nav>
+        <button
+          type="button"
+          className="theme-toggle"
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          onClick={onToggleTheme}
+        >
+          {theme === "dark" ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
+        </button>
         <button
           type="button"
           className="network-toggle"

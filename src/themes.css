@@ -1,0 +1,93 @@
+/* Theme overrides include portaled dialogs and native form controls. */
+:root { color-scheme: dark; }
+:root[data-theme="light"] {
+  color-scheme: light;
+  color: #182338;
+  background: #f7f9fc;
+  --bg: #f7f9fc;
+  --surface: #ffffff;
+  --line: #d4dce8;
+  --muted: #536177;
+  --blue: #285bc3;
+  --accent: #285bd4;
+}
+[data-theme="light"] :focus-visible { outline-color: #285bd4; }
+[data-theme="light"] .skip-link { background: #285bd4; color: white; }
+[data-theme="light"] .site-header {
+  background: #f7f9fcf2;
+  border-color: var(--line);
+}
+[data-theme="light"] .tech-background {
+  background: radial-gradient(ellipse at 100% 12%, #dbe7ff80, transparent 55%), #f7f9fc;
+}
+[data-theme="light"] .tech-dot-grid {
+  background-image: radial-gradient(circle, #486a9e50 0.8px, transparent 1px);
+}
+[data-theme="light"] .circuit-trace { stroke: #456ba8; }
+[data-theme="light"] .circuit-terminal { fill: #edf3ff; stroke: #375d9b; }
+[data-theme="light"] .circuit-glow { fill: #3767e8; }
+[data-theme="light"] .circuit-signal {
+  stroke: #2359b6;
+  filter: drop-shadow(0 0 2px #3767e866);
+}
+[data-theme="light"] :is(.navigation, .hero-socials a, .hero-footnote,
+  .project-kicker, .project-details, .education-bottom, .credential-kind,
+  .contact-socials a, .network-toggle, .theme-toggle) { color: var(--muted); }
+[data-theme="light"] :is(.navigation > a:hover, .navigation .nav-contact,
+  .hero-socials a:hover, .portrait-caption strong, .project-tagline,
+  .project-details h4, .contact-form label, .contact-socials a:hover,
+  .network-toggle:hover, .theme-toggle:hover) { color: #182338; }
+[data-theme="light"] :is(.secondary, .navigation .nav-contact, .menu-toggle,
+  .tags li, .education, .education-bottom, .credential-card, .credential-action,
+  .credential-note, .certificate-viewer, .certificate-viewer-close,
+  .about-section, .contact-section, .email-link) { border-color: var(--line); }
+[data-theme="light"] :is(.project-kicker > span:last-child, .hero-footnote > span > span,
+  .capability-top > span) { color: #64738b; }
+[data-theme="light"] :is(.secondary:hover, .network-toggle:hover,
+  .theme-toggle:hover, .certificate-viewer-close:hover) { background: #e6edf8; }
+[data-theme="light"] .primary:hover { background: #214db7; }
+[data-theme="light"] .portrait-frame { background: #e3e9f2; outline-color: #becbe0; }
+[data-theme="light"] :is(.education, .credential-card, .certificate-viewer) {
+  background: #fff;
+}
+[data-theme="light"] .tags li { color: #4b5c74; }
+[data-theme="light"] .about-section { background: #edf2f980; }
+[data-theme="light"] .contact-section { background: #eaf1fb80; }
+[data-theme="light"] .credential-card { border-top-color: #4774d1; }
+[data-theme="light"] .credential-card:hover,
+[data-theme="light"] .credential-card:focus-within {
+  background: #f5f8ff;
+  border-color: #88a7e1;
+}
+[data-theme="light"] .issuer-mark {
+  background: #eaf1ff;
+  border-color: #c3d4f2;
+  color: #285bc3;
+}
+[data-theme="light"] .credential-action { color: #285bc3; }
+[data-theme="light"] .credential-action:hover { color: #173f92; }
+[data-theme="light"] .credential-training { background: #f4faf8; border-top-color: #4b9688; }
+[data-theme="light"] .credential-training .issuer-mark {
+  color: #27675a;
+  background: #e4f2ed;
+  border-color: #b8d7cd;
+}
+[data-theme="light"] .certificate-viewer-overlay { background: #17243999; }
+[data-theme="light"] .certificate-viewer-close { background: #edf2f9; }
+[data-theme="light"] :is(.contact-form input, .contact-form textarea) {
+  background: #fff;
+  color: #182338;
+  border-color: #bcc9dc;
+}
+[data-theme="light"] :is(.contact-form input, .contact-form textarea)::placeholder {
+  color: #62718a;
+}
+[data-theme="light"] :is(.contact-form input, .contact-form textarea):focus {
+  border-color: var(--blue);
+}
+[data-theme="light"] .form-status.success { color: #246a42; }
+[data-theme="light"] .form-status.error { color: #ae3432; }
+@media (max-width: 760px) {
+  [data-theme="light"] .navigation { background: #f7f9fc; border-color: var(--line); }
+  [data-theme="light"] .circuit-signal { stroke: #4c73ad; filter: none; }
+}

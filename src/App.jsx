@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTheme } from "./useTheme";
 import { CircuitBackground } from "./components/CircuitBackground";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
@@ -9,6 +10,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
 export default function App() {
+  const { theme, toggleTheme } = useTheme();
   const [networkPaused, setNetworkPaused] = useState(false);
   return (
     <>
@@ -17,6 +19,8 @@ export default function App() {
         Skip to content
       </a>
       <Header
+        theme={theme}
+        onToggleTheme={toggleTheme}
         networkPaused={networkPaused}
         onToggleNetwork={() => setNetworkPaused((paused) => !paused)}
       />

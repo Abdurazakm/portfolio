@@ -296,17 +296,17 @@ h2 > span {
 }
 .circuit-signal {
   fill: none;
-  stroke: #b0d2ff;
-  stroke-width: 2.5;
+  stroke: #d1e5ff;
+  stroke-width: 3;
   stroke-linecap: round;
   stroke-dasharray: 1.5 101;
   stroke-dashoffset: 2;
   vector-effect: non-scaling-stroke;
-  filter: drop-shadow(0 0 2px #8bbaff80);
-  animation: circuit-travel 32s linear infinite;
+  filter: drop-shadow(0 0 3px #8bbaffa6);
+  animation: circuit-travel 24s linear infinite;
 }
 .circuit-edge-right .circuit-signal {
-  animation-delay: -16s;
+  animation-delay: -12s;
 }
 .tech-background[data-paused="true"] *,
 .tech-background[data-running="false"] * {
@@ -318,7 +318,7 @@ h2 > span {
     opacity: 0;
   }
   8%, 85% {
-    opacity: 0.75;
+    opacity: 0.9;
   }
   100% {
     stroke-dashoffset: -101;
@@ -456,7 +456,8 @@ h2 > span {
   align-items: center;
   gap: 12px;
 }
-.network-toggle {
+.network-toggle,
+.theme-toggle {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
@@ -472,7 +473,8 @@ h2 > span {
   font-size: 11px;
   letter-spacing: 0;
 }
-.network-toggle:hover {
+.network-toggle:hover,
+.theme-toggle:hover {
   background: #26354e;
   color: white;
 }
@@ -482,8 +484,8 @@ h2 > span {
 }
 .project {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  background: #181a1e;
+  grid-template-columns: 1fr 1.1fr;
+  background: transparent;
   border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
@@ -492,30 +494,19 @@ h2 > span {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 46px 28px 64px;
-  background: #292b30;
+  padding: 20px 22px 40px;
   min-width: 0;
-}
-.project-fetan .project-visual {
-  background: #302a24;
-}
-.project-voicelocal .project-visual {
-  background: #202b3c;
-}
-.project-mayaye .project-visual {
-  background: #282b29;
 }
 .browser-frame {
   width: 100%;
   overflow: hidden;
   border-radius: 6px;
   background: #ededed;
-  box-shadow: 0 20px 34px #0004;
-  transform: rotate(-2deg);
+  box-shadow: 0 8px 20px #0002;
   transition: transform 0.35s;
 }
 .project-visual:hover .browser-frame {
-  transform: rotate(0) translateY(-4px);
+  transform: translateY(-2px);
 }
 .browser-bar {
   height: 26px;
@@ -539,24 +530,24 @@ h2 > span {
 .browser-frame img {
   width: 100%;
   height: auto;
-  aspect-ratio: 1274/718;
+  aspect-ratio: 2.1;
   object-fit: cover;
   object-position: top;
 }
 .preview-label {
   position: absolute;
-  bottom: 22px;
-  left: 28px;
-  right: 28px;
+  bottom: 14px;
+  left: 22px;
+  right: 22px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 9px;
   letter-spacing: 1.6px;
-  color: #d0d0d0;
+  color: var(--muted);
 }
 .project-copy {
-  padding: 34px;
+  padding: 24px;
 }
 .project-kicker {
   display: flex;
@@ -564,7 +555,7 @@ h2 > span {
   color: #afb5c2;
   font-size: 9px;
   letter-spacing: 1.5px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 .project-kicker > span:last-child {
   color: #7e8593;
@@ -603,6 +594,15 @@ h2 > span {
   display: flex;
   gap: 22px;
   flex-wrap: wrap;
+}
+.project .tags {
+  margin-block: 12px;
+}
+.project .project-details {
+  margin-top: 10px;
+}
+.project .project-details summary {
+  padding-top: 12px;
 }
 .project-links a {
   font-size: 12px;
@@ -1220,7 +1220,7 @@ summary::-webkit-details-marker {
     grid-template-columns: 1fr 1fr;
   }
   .project-copy {
-    padding: 25px;
+    padding: 22px;
   }
   .project-visual {
     padding-inline: 20px;
@@ -1249,6 +1249,9 @@ summary::-webkit-details-marker {
   .network-toggle {
     order: 1;
   }
+  .theme-toggle {
+    order: 1;
+  }
   .menu-toggle {
     order: 2;
   }
@@ -1260,9 +1263,9 @@ summary::-webkit-details-marker {
     opacity: 0.75;
   }
   .circuit-signal {
-    animation-duration: 42s;
-    stroke: #8caedb;
-    stroke-width: 2;
+    animation-duration: 32s;
+    stroke: #a9c8ee;
+    stroke-width: 2.2;
     filter: none;
   }
   .circuit-edge-right .circuit-signal {
@@ -1429,17 +1432,16 @@ summary::-webkit-details-marker {
     grid-template-columns: 1fr;
   }
   .project-visual {
-    padding: 36px 25px 52px;
-    min-height: 220px;
+    padding: 18px 20px 36px;
   }
   .project-copy {
-    padding: 25px;
+    padding: 18px 20px 22px;
   }
   .project h3 {
     font-size: 25px;
   }
   .project-kicker {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
   .project-list {
     gap: 24px;
