@@ -7,7 +7,7 @@
 React hydrates it to enable the hero, project previews, theme, and forms.
 Deploy the `dist` directory as a static site. No production Node server is needed.
 
-The primary public URL is `https://abdurazak.dev/`, configured in `seo.config.mjs`.
+The primary public URL is `https://www.abdurazak.dev/`, configured in `seo.config.mjs`.
 To change it, update `siteUrl` or set `SITE_URL` in the deployment environment.
 This one value controls the canonical
 link, absolute social image URLs, structured-data IDs, robots.txt, and sitemap.xml.
@@ -31,7 +31,7 @@ A modern, responsive portfolio website built with React, showcasing professional
 
 ## 🌐 Live Demo
 
-**[View Live Portfolio →](https://abdurazak.dev/)**
+**[View Live Portfolio →](https://www.abdurazak.dev/)**
 
 ## ✨ Features
 

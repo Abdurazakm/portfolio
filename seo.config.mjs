@@ -1,5 +1,5 @@
 // Set this to the portfolio's primary public URL, or provide SITE_URL at build time.
-export const siteUrl = "https://abdurazak.dev/";
+export const siteUrl = "https://www.abdurazak.dev/";
 
 export const seo = {
   name: "Abdurazak Mohammed",
