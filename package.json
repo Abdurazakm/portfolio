@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "node scripts/build.mjs",
     "test:seo": "node --test scripts/seo.test.mjs",
+    "test:contact": "node --test src/contactSubmission.test.js src/inquiryTracking.test.js",
     "check:seo": "node scripts/check-seo.mjs",
     "lint": "eslint .",
     "preview": "vite preview"

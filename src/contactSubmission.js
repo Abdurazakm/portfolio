@@ -1,3 +1,5 @@
+import { trackContactSuccess } from "./inquiryTracking.js";
+
 export const contactEmail = "abdurazakm343@gmail.com";
 export const contactEndpoint = "https://formspree.io/f/mdkgjpjd";
 
@@ -8,7 +10,7 @@ export function createEmailDraft(data) {
 }
 
 // An accepted submission is not proof of delivery to the recipient's inbox.
-export async function submitContact(data, fetchRequest = fetch) {
+export async function submitContact(data, fetchRequest = fetch, onAccepted = trackContactSuccess) {
   try {
     const response = await fetchRequest(contactEndpoint, {
       method: "POST",
@@ -19,6 +21,7 @@ export async function submitContact(data, fetchRequest = fetch) {
     const result = await response.json().catch(() => null);
     const errors = Array.isArray(result?.errors) ? result.errors : [];
     if (response.ok && result?.ok === true && !result.error && errors.length === 0) {
+      try { onAccepted(); } catch { /* A tracking failure must not change a successful submission. */ }
       return { accepted: true };
     }
     const message = errors.map((error) => error.message).filter((text) => typeof text === "string").join(" ");

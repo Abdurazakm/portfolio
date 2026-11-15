@@ -1,6 +1,7 @@
 import { ArrowUpRight, Code2, Github, GraduationCap, Linkedin, Mail, MapPin } from "lucide-react";
 import { heroViews } from "../heroViews";
 import { contactEmail } from "../contactSubmission";
+import { trackEmailClick } from "../inquiryTracking";
 
 const connections = {
   build: "M 40 112 L 114 142",
@@ -61,7 +62,7 @@ export function ProfileExplorer({ selected, interacted }) {
             )}
             {view.id === "connect" && (
               <div className="hero-connect-card">
-                <a className="hero-connect-email" href={`mailto:${contactEmail}`}>
+                <a className="hero-connect-email" href={`mailto:${contactEmail}`} onClick={() => trackEmailClick("hero_connect")}>
                   <Mail size={20} aria-hidden="true" />
                   <span><strong>Email me</strong><span>{contactEmail}</span></span>
                   <ArrowUpRight size={16} aria-hidden="true" />

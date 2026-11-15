@@ -39,3 +39,29 @@ test("email fallback preserves the visitor's text and safely encodes the subject
   assert.ok(draft.searchParams.get("body").includes(data.get("message")));
   assert.ok(draft.searchParams.get("body").includes(data.get("email")));
 });
+
+test("counts exactly once after explicit acceptance, without passing form data", async () => {
+  const events = [];
+  const result = await submitContact(data, reply({ ok: true }), (...args) => events.push(args));
+  assert.equal(result.accepted, true);
+  assert.deepEqual(events, [[]]);
+});
+
+test("failed, ambiguous, and interrupted requests never become inquiry events", async () => {
+  const events = [];
+  const record = () => events.push("unexpected");
+  for (const request of [
+    reply({ ok: false }), reply({}), reply({ ok: true, error: "Rejected" }),
+    reply({ ok: true, errors: [{ message: "Invalid" }] }), reply({ ok: true }, 429),
+    async () => new Response("<html>Sign in</html>"),
+    async () => { throw new Error("Connection lost"); },
+  ]) {
+    assert.equal((await submitContact(data, request, record)).accepted, false);
+  }
+  assert.deepEqual(events, []);
+});
+
+test("analytics failure does not change a successful submission", async () => {
+  const result = await submitContact(data, reply({ ok: true }), () => { throw new Error("Analytics unavailable"); });
+  assert.equal(result.accepted, true);
+});

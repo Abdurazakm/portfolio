@@ -1,5 +1,36 @@
 # 🚀 Abdurazak Mohammed - Portfolio Website
 
+## Inquiry tracking
+
+The GA4 Measurement ID is configured in `analytics.config.mjs`, with an optional
+`VITE_GA_MEASUREMENT_ID` build-time override. An empty ID leaves tracking disabled.
+Tracking runs only in a production build on the canonical site's origin; local
+previews and Vercel preview domains do not send analytics events.
+
+In Google Analytics, create a Web data stream for `https://www.abdurazak.dev`.
+Turn **Enhanced measurement off** for that stream: this integration sends explicit
+page views and inquiry events, rather than counting automatic form-submit attempts.
+Do not install a second Google tag through a separate snippet or tag manager.
+
+| Event | What it counts |
+| --- | --- |
+| `generate_lead` | A contact form request explicitly accepted by Formspree. Failed requests and validation errors do not count. This confirms acceptance, not inbox delivery. |
+| `email_link_click` | A click on the hero email link, contact email address, or email draft fallback. This does not confirm that an email was sent. |
+
+Use **Reports → Engagement → Events**, or the Events report in your chosen GA4
+report collection, and read the **Event count** for each event. Use **Realtime**
+to check incoming activity. Optionally mark `generate_lead` as a key event in
+**Admin → Events**. Keep the two counts separate; they are not a deduplicated total
+of people or inquiries. Browser blockers can cause analytics to undercount.
+
+The event payloads contain only fixed source labels. They never include contact
+names, visitor email addresses, subjects, message contents, or mailto URLs.
+Page URLs omit query strings and fragments; referrers contain only their origin.
+Google advertising personalization and Google Signals are disabled in the tag.
+
+Validation: `npm run test:contact` uses mock responses and makes no real contact
+submissions or analytics requests.
+
 ## SEO and production builds
 
 `npm run build` builds the client and pre-renders the homepage and three service

@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { ArrowUpRight, ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { contactEmail, contactEndpoint, createEmailDraft, submitContact } from "../contactSubmission";
+import { trackEmailClick } from "../inquiryTracking";
 
 export function Contact() {
   const [status, setStatus] = useState("idle");
@@ -44,7 +45,7 @@ export function Contact() {
             Tell me what you need in your own words. You don’t need a technical
             brief to start a conversation.
           </p>
-          <a className="email-link" href="mailto:abdurazakm343@gmail.com">
+          <a className="email-link" href={`mailto:${contactEmail}`} onClick={() => trackEmailClick("contact_section")}>
             abdurazakm343@gmail.com <ArrowUpRight size={22} />
           </a>
           <div className="contact-socials">
@@ -139,7 +140,7 @@ export function Contact() {
               </span>
             )}
           </div>
-          <a className="contact-email-fallback" href={emailDraft}>
+          <a className="contact-email-fallback" href={emailDraft} onClick={() => trackEmailClick("contact_form_fallback")}>
             <Mail size={15} aria-hidden="true" /> Open this message in your email app
           </a>
         </form>
