@@ -5,7 +5,7 @@ const capabilities = [
     icon: Code2,
     title: "Interfaces that make sense",
     description:
-      "Responsive web experiences with React, JavaScript, and Tailwind CSS.",
+      "Responsive web experiences with Next.js, React, JavaScript, and Tailwind CSS.",
   },
   {
     icon: Database,
@@ -42,6 +42,13 @@ export function About() {
             I enjoy connecting the pieces: a clear interface, a well-structured
             API, and the data that makes a product useful. My projects explore
             everything from campus delivery to community participation.
+          </p>
+          <p>
+            I offer website development, mobile app development, and software
+            maintenance for local businesses in Hawassa, Ethiopia. Whether you
+            need a business website or updates to existing software, the goal is
+            to make your business easier to find online and your everyday work
+            simpler.
           </p>
           <p>
             Alongside building, I’m continuing to explore AI backend engineering

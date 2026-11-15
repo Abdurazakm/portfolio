@@ -36,9 +36,13 @@ export function Contact() {
             in mind<span>?</span>
           </h2>
           <p>
-            A project, an opportunity, or an interesting idea.
-            <br />
-            I’d love to hear about it.
+            Need a website for your business, an online ordering system, a
+            mobile app, or help fixing an existing website? I can help with
+            website updates, bug fixes, and ongoing software maintenance.
+          </p>
+          <p>
+            Tell me what you need in your own words. You don’t need a technical
+            brief to start a conversation.
           </p>
           <a className="email-link" href="mailto:abdurazakm343@gmail.com">
             abdurazakm343@gmail.com <ArrowUpRight size={22} />

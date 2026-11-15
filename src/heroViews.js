@@ -2,7 +2,7 @@ export const heroViews = [
   {
     id: "build", label: "Build", number: "01",
     headline: "Thoughtful code.", accent: "Useful products.",
-    description: "I’m a full-stack developer building React web applications and Node.js APIs for practical, everyday needs.",
+    description: "I’m a full-stack developer building useful digital products, from intuitive interfaces to the systems that power them.",
     topics: ["WEB APPLICATIONS", "BACKEND SYSTEMS", "REAL-WORLD IDEAS"],
     href: "#projects", link: "Explore my work",
     detailLabel: "FROM IDEA TO APPLICATION", orbitCaption: "INTERFACE → API → DATA",
@@ -26,7 +26,7 @@ export const heroViews = [
   {
     id: "connect", label: "Connect", number: "04",
     headline: "Have something", accent: "in mind?",
-    description: "A project, an opportunity, or an interesting idea. I’d love to hear about it.",
+    description: "Need a website, an app, or help with existing software? Tell me about your business or idea.",
     topics: ["PROJECTS", "OPPORTUNITIES", "IDEAS"],
     href: "#contact", link: "Let’s talk",
     detailLabel: "LET’S CONNECT", orbitCaption: "A PROJECT → AN IDEA → A CONVERSATION",

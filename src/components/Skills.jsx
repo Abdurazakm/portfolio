@@ -10,7 +10,7 @@ export function Skills() {
     },
     {
       title: "Frameworks & Libraries",
-      skills: ["React.js", "Node.js", "Express.js", "Django"],
+      skills: ["Next.js", "React.js", "Node.js", "Express.js", "Django"],
       color: "bg-green-600/10 text-green-400 border-green-500/30"
     },
     {
