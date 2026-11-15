@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Menu, Moon, Sun, X } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, FolderCode, Menu, Moon, Sun, UserRound, X } from "lucide-react";
 
 export function Header({ theme, onToggleTheme }) {
   const [open, setOpen] = useState(false);
@@ -56,13 +56,13 @@ export function Header({ theme, onToggleTheme }) {
           className={open ? "navigation is-open" : "navigation"}
         >
           <a href="#projects" aria-current={active === "projects" ? "location" : undefined} onClick={() => setOpen(false)}>
-            Work
+            <FolderCode className="nav-icon" size={15} aria-hidden="true" /> Work
           </a>
           <a href="#about" aria-current={active === "about" ? "location" : undefined} onClick={() => setOpen(false)}>
-            About
+            <UserRound className="nav-icon" size={15} aria-hidden="true" /> About
           </a>
           <a href="#experience" aria-current={active === "experience" ? "location" : undefined} onClick={() => setOpen(false)}>
-            Experience
+            <BriefcaseBusiness className="nav-icon" size={15} aria-hidden="true" /> Experience
           </a>
           <a
             href="#contact"

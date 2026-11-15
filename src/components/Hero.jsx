@@ -3,8 +3,8 @@ import {
   ArrowUpRight,
   Github,
   Linkedin,
-  MapPin,
 } from "lucide-react";
+import { ProfileExplorer } from "./ProfileExplorer";
 
 export function Hero() {
   return (
@@ -54,25 +54,7 @@ export function Hero() {
             </a>
           </div>
         </div>
-        <figure className="portrait-composition">
-          <p className="portrait-label eyebrow">THE PERSON BEHIND THE CODE</p>
-          <div className="portrait-frame">
-            <img
-              src="/abdurazak.png"
-              alt="Abdurazak Mohammed"
-              width="722"
-              height="722"
-              fetchPriority="high"
-            />
-          </div>
-          <figcaption className="portrait-caption">
-            <strong>Abdurazak Mohammed</strong>
-            <span className="portrait-role">Full-stack developer</span>
-            <span>
-              <MapPin size={13} aria-hidden="true" /> Hawassa, Ethiopia
-            </span>
-          </figcaption>
-        </figure>
+        <ProfileExplorer />
         <div className="hero-footnote">
           <span>
             WEB APPLICATIONS <span>/</span> BACKEND SYSTEMS <span>/</span>{" "}
