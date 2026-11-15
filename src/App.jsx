@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NetworkBackground } from "./components/NetworkBackground";
+import { CircuitBackground } from "./components/CircuitBackground";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Projects } from "./components/Projects";
@@ -12,7 +12,7 @@ export default function App() {
   const [networkPaused, setNetworkPaused] = useState(false);
   return (
     <>
-      <NetworkBackground paused={networkPaused} />
+      <CircuitBackground paused={networkPaused} />
       <a className="skip-link" href="#main">
         Skip to content
       </a>
