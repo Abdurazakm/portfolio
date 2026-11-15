@@ -1,24 +1,27 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ArrowUpRight, ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { contactEmail, contactEndpoint, createEmailDraft, submitContact } from "../contactSubmission";
 
 export function Contact() {
   const [status, setStatus] = useState("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [emailDraft, setEmailDraft] = useState(`mailto:${contactEmail}`);
+  const sending = useRef(false);
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (status === "sending") return;
+    if (sending.current) return;
     const form = event.currentTarget;
+    const data = new FormData(form);
+    sending.current = true;
+    setEmailDraft(createEmailDraft(data));
     setStatus("sending");
-    try {
-      const response = await fetch("https://formspree.io/f/mdkgjpjd", {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: new FormData(form),
-        signal: AbortSignal.timeout(15000),
-      });
-      if (!response.ok) throw new Error("Message delivery failed");
+    const result = await submitContact(data);
+    sending.current = false;
+    if (result.accepted) {
       form.reset();
       setStatus("success");
-    } catch {
+    } else {
+      setErrorMessage(result.message);
       setStatus("error");
     }
   };
@@ -49,7 +52,7 @@ export function Contact() {
               <Github size={18} /> GitHub
             </a>
             <a
-              href="https://www.linkedin.com/in/abdurazak-mohammed-a437b62b6/"
+              href="https://www.linkedin.com/in/abdurazak-mohammed-264685205/"
               target="_blank"
               rel="noreferrer"
             >
@@ -58,10 +61,16 @@ export function Contact() {
           </div>
         </div>
         <form
+          action={contactEndpoint}
+          method="POST"
           onSubmit={handleSubmit}
           className="contact-form"
           aria-label="Contact Abdurazak"
           aria-busy={status === "sending"}
+          onInput={(event) => {
+            setEmailDraft(createEmailDraft(new FormData(event.currentTarget)));
+            if (!sending.current) setStatus("idle");
+          }}
         >
           <div className="form-row">
             <div>
@@ -119,17 +128,16 @@ export function Contact() {
             role="status"
             aria-live="polite"
           >
-            {status === "success" && "Thanks! Your message has been sent."}
+            {status === "success" && "Thanks! Your message was submitted. You can also reach me directly by email below."}
             {status === "error" && (
               <span>
-                Couldn’t send your message. Please try again or{" "}
-                <a href="mailto:abdurazakm343@gmail.com">
-                  email me directly <Mail size={14} />
-                </a>
-                .
+                {errorMessage}
               </span>
             )}
           </div>
+          <a className="contact-email-fallback" href={emailDraft}>
+            <Mail size={15} aria-hidden="true" /> Open this message in your email app
+          </a>
         </form>
       </div>
     </section>

@@ -46,7 +46,7 @@ export function Hero() {
               <Github size={17} /> GitHub <ArrowUpRight size={13} />
             </a>
             <a
-              href="https://www.linkedin.com/in/abdurazak-mohammed-a437b62b6/"
+              href="https://www.linkedin.com/in/abdurazak-mohammed-264685205/"
               target="_blank"
               rel="noreferrer"
             >

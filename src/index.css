@@ -395,7 +395,19 @@ h2 > span {
   line-height: 1.5;
   color: var(--muted);
 }
-.hero-intro strong { color: var(--blue); font-weight: 500; }
+.hero-intro strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--blue);
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 600;
+  line-height: 1.25;
+  animation: name-introduction 850ms cubic-bezier(0.22, 1, 0.36, 1) 100ms both;
+}
+@keyframes name-introduction {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 .hero-intro + h1 { margin-top: 14px; }
 .hero h1 > span {
   color: var(--blue);
@@ -1210,6 +1222,17 @@ summary::-webkit-details-marker {
 .form-status.error {
   color: #ffb1af;
 }
+.contact-email-fallback {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 8px;
+  color: var(--blue);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.contact-email-fallback:hover { text-decoration: underline; }
 .form-status a {
   text-decoration: underline;
   display: inline-flex;
