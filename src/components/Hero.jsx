@@ -53,26 +53,25 @@ export function Hero() {
           </a>
         </div>
       </div>
-      <div className="portrait-composition">
+      <figure className="portrait-composition">
+        <p className="portrait-label eyebrow">THE PERSON BEHIND THE CODE</p>
         <div className="portrait-frame">
           <img
             src="/abdurazak.png"
             alt="Abdurazak Mohammed"
-            width="560"
-            height="640"
+            width="722"
+            height="722"
             fetchPriority="high"
           />
-          <span className="portrait-index">01 / THE DEVELOPER</span>
         </div>
-        <div className="portrait-caption">
+        <figcaption className="portrait-caption">
+          <strong>Abdurazak Mohammed</strong>
+          <span className="portrait-role">Full-stack developer</span>
           <span>
-            <MapPin size={14} /> Hawassa, Ethiopia
+            <MapPin size={13} aria-hidden="true" /> Hawassa, Ethiopia
           </span>
-          <span>
-            Building with purpose <span className="blue-dot" />
-          </span>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
       <div className="hero-footnote">
         <span>
           WEB APPLICATIONS <span>/</span> BACKEND SYSTEMS <span>/</span>{" "}
