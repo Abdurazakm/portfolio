@@ -1,11 +1,11 @@
 import { ArrowUp } from "lucide-react";
 import { useHydrated } from "../useHydrated";
-export function Footer({ networkPaused, onToggleNetwork }) {
+export function Footer({ networkPaused, onToggleNetwork, homeHref = "#home" }) {
   const hydrated = useHydrated();
   const year = hydrated ? new Date().getFullYear() : import.meta.env.VITE_BUILD_YEAR;
   return (
     <footer className="shell footer">
-      <a href="#home" className="brand" aria-label="Abdurazak Mohammed, home">
+      <a href={homeHref} className="brand" aria-label="Abdurazak Mohammed, home">
         am<span>.</span>
       </a>
       <p>© {year} Abdurazak Mohammed</p>

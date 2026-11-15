@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { renderToString } from "react-dom/server";
-import App from "./App";
+import { Site } from "./Site";
 
-export function render() {
-  return renderToString(<StrictMode><App /></StrictMode>);
+export function render(pathname = "/") {
+  return renderToString(<StrictMode><Site pathname={pathname} /></StrictMode>);
 }

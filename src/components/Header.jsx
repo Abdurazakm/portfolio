@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, BriefcaseBusiness, FolderCode, Menu, Moon, Sun, UserRound, X } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, FolderCode, Layers, Menu, Moon, Sun, UserRound, X } from "lucide-react";
 
-export function Header({ theme, onToggleTheme }) {
+export function Header({ theme, onToggleTheme, onHome = true }) {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("home");
+  const [active, setActive] = useState(onHome ? "home" : "services");
+  const home = onHome ? "" : "/";
   const toggle = useRef(null);
   useEffect(() => {
-    if (!("IntersectionObserver" in window)) return;
+    if (!onHome || !("IntersectionObserver" in window)) return;
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {
         if (entry.isIntersecting) setActive(entry.target.id);
@@ -14,7 +15,7 @@ export function Header({ theme, onToggleTheme }) {
     }, { rootMargin: "-20% 0px -60% 0px" });
     document.querySelectorAll("main > section").forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  }, []);
+  }, [onHome]);
   useEffect(() => {
     const close = (event) => {
       if (event.key === "Escape" && open) {
@@ -29,7 +30,7 @@ export function Header({ theme, onToggleTheme }) {
     <header className="site-header">
       <div className="shell header-inner">
         <a
-          href="#home"
+          href={`${home}#home`}
           className="brand header-brand"
           aria-label="Abdurazak Mohammed, home"
           onClick={() => setOpen(false)}
@@ -55,17 +56,20 @@ export function Header({ theme, onToggleTheme }) {
           aria-label="Main navigation"
           className={open ? "navigation is-open" : "navigation"}
         >
-          <a href="#projects" aria-current={active === "projects" ? "location" : undefined} onClick={() => setOpen(false)}>
+          <a href={`${home}#projects`} aria-current={active === "projects" ? "location" : undefined} onClick={() => setOpen(false)}>
             <FolderCode className="nav-icon" size={15} aria-hidden="true" /> Work
           </a>
-          <a href="#about" aria-current={active === "about" ? "location" : undefined} onClick={() => setOpen(false)}>
+          <a href={`${home}#services`} aria-current={active === "services" ? "location" : undefined} onClick={() => setOpen(false)}>
+            <Layers className="nav-icon" size={15} aria-hidden="true" /> Services
+          </a>
+          <a href={`${home}#about`} aria-current={active === "about" ? "location" : undefined} onClick={() => setOpen(false)}>
             <UserRound className="nav-icon" size={15} aria-hidden="true" /> About
           </a>
-          <a href="#experience" aria-current={active === "experience" ? "location" : undefined} onClick={() => setOpen(false)}>
+          <a href={`${home}#experience`} aria-current={active === "experience" ? "location" : undefined} onClick={() => setOpen(false)}>
             <BriefcaseBusiness className="nav-icon" size={15} aria-hidden="true" /> Experience
           </a>
           <a
-            href="#contact"
+            href={`${home}#contact`}
             className="nav-contact"
             aria-current={active === "contact" ? "location" : undefined}
             onClick={() => setOpen(false)}

@@ -1,0 +1,81 @@
+.services-section { border-top: 1px solid var(--line); }
+.service-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.service-card, .service-prompt, .service-technical, .service-work-card {
+  border: 1px solid var(--profile-border); border-radius: 18px;
+  background: var(--profile-glass); box-shadow: 0 12px 32px var(--profile-shadow);
+}
+.service-card { display: flex; flex-direction: column; padding: 28px; transition: border-color 180ms, transform 180ms; }
+.service-card:hover { border-color: var(--blue); transform: translateY(-3px); }
+.service-card-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 28px; color: var(--blue); }
+.service-card-top > span { font: 11px/1.6 "SFMono-Regular", Consolas, monospace; letter-spacing: 1px; color: var(--muted); }
+.service-card h3 { font-size: 22px; font-weight: 500; letter-spacing: -.7px; margin-bottom: 14px; }
+.service-card > p { color: var(--muted); font-size: 14px; line-height: 1.8; margin-bottom: 26px; }
+.service-card-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; font-size: 13px; color: var(--blue); }
+.service-hero { padding-block: 32px 80px; }
+.service-breadcrumb { display: flex; flex-wrap: wrap; gap: 9px; font-size: 12px; color: var(--muted); margin-bottom: 64px; }
+.service-breadcrumb a { padding-block: 8px; }
+.service-breadcrumb > span { padding-block: 8px; }
+.service-breadcrumb a:hover { color: var(--blue); }
+.service-hero-layout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: center; gap: 56px; }
+.service-hero h1 { margin: 24px 0; font-size: clamp(38px, 4.5vw, 61px); font-weight: 500; line-height: 1.12; letter-spacing: -2.6px; }
+.service-hero h1 > span { color: var(--blue); }
+.service-intro { color: var(--muted); max-width: 580px; font-size: 16px; line-height: 1.9; }
+.service-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 30px; }
+.service-prompt { padding: 32px; }
+.service-prompt h2 { font-size: 30px; letter-spacing: -1px; }
+.service-prompt ul { list-style: none; padding: 0; margin: 28px 0; }
+.service-prompt li { display: flex; align-items: baseline; gap: 12px; padding-block: 15px; border-bottom: 1px solid var(--line); font-size: 15px; line-height: 1.7; }
+.service-prompt > p { color: var(--muted); font-size: 13px; }
+.service-detail-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 80px; border-top: 1px solid var(--line); }
+.service-detail-layout h2 { margin: 18px 0 34px; }
+.service-need { display: grid; grid-template-columns: 28px 1fr; gap: 18px; padding-block: 22px; border-bottom: 1px solid var(--line); }
+.service-need h3 { font-size: 18px; font-weight: 500; letter-spacing: -.3px; margin-bottom: 9px; }
+.service-need p, .service-technical > p:not(.eyebrow), .service-work-card > div > p:not(.eyebrow), .service-faq p { font-size: 14px; color: var(--muted); line-height: 1.85; }
+.service-technical { align-self: start; padding: 32px; }
+.service-technical h3 { margin: 18px 0; font-size: 25px; font-weight: 500; letter-spacing: -.8px; }
+.service-technical .tags { margin-bottom: 0; }
+.service-work { padding-top: 0; }
+.service-work .section-heading > p { max-width: 470px; }
+.service-work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.service-work-card { overflow: hidden; }
+.service-work-card > a { display: block; border-bottom: 1px solid var(--line); }
+.service-work-card img { width: 100%; height: auto; aspect-ratio: 1274 / 718; object-fit: cover; }
+.service-work-card > div { padding: 28px; }
+.service-work-card h3 { font-size: 25px; font-weight: 500; letter-spacing: -.7px; margin: 12px 0; }
+.service-work-card .text-link { min-height: 44px; font-size: 13px; }
+.service-start-list { padding-left: 23px; color: var(--muted); }
+.service-start-list li { padding: 0 0 20px 12px; font-size: 15px; line-height: 1.85; }
+.service-start-list li::marker { color: var(--blue); }
+.service-faq h3 { margin: 0 0 20px; font-size: 21px; font-weight: 500; letter-spacing: -.5px; }
+.service-faq details { border-bottom: 1px solid var(--line); }
+.service-faq summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; list-style: none; min-height: 64px; padding-block: 20px; font-size: 15px; line-height: 1.65; }
+.service-faq summary svg { color: var(--blue); }
+.service-faq details[open] summary svg { transform: rotate(45deg); }
+.service-faq details > p { padding-bottom: 24px; }
+.service-closing { border-top: 1px solid var(--line); padding-block: 70px 90px; text-align: center; }
+.service-closing h2 { margin: 20px auto 30px; max-width: 700px; }
+.service-other-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 30px; margin: 35px 0 20px; }
+.service-other-links a { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; color: var(--blue); font-size: 14px; }
+.project-explanations { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; grid-column: 1 / -1; padding: 28px 24px; border-top: 1px solid var(--line); }
+.project-explanations h4 { font-size: 16px; font-weight: 500; margin-bottom: 12px; }
+.project-explanations p { color: var(--muted); font-size: 13px; line-height: 1.85; }
+@media (max-width: 1000px) {
+  .service-cards { gap: 14px; }
+  .service-card { padding: 22px; }
+  .service-hero-layout, .service-detail-layout { gap: 32px; }
+  .service-prompt, .service-technical { padding: 24px; }
+}
+@media (max-width: 760px) {
+  .service-cards, .service-hero-layout, .service-detail-layout, .service-work-grid, .project-explanations { grid-template-columns: 1fr; }
+  .service-card { padding: 26px; }
+  .service-hero { padding-block: 18px 54px; }
+  .service-breadcrumb { margin-bottom: 35px; }
+  .service-hero h1 { letter-spacing: -1.7px; }
+  .service-hero-layout { gap: 38px; }
+  .service-prompt li { padding-block: 12px; }
+  .service-detail-layout { gap: 34px; }
+  .service-work .section-heading { align-items: flex-start; }
+  .service-closing { padding-block: 50px 60px; }
+  .project-explanations { gap: 24px; padding: 24px 20px; }
+}
+@media (prefers-reduced-motion: reduce) { .service-card { transition: none; } .service-card:hover { transform: none; } }

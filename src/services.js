@@ -1,0 +1,85 @@
+export const services = [
+  {
+    slug: "business-websites", number: "01", name: "Business websites", icon: "web",
+    path: "/services/business-websites/",
+    title: "Business Websites in Hawassa | Abdurazak Mohammed",
+    description: "Business website development in Hawassa, Ethiopia. Explore services, a local clinic website example, and technical options with Abdurazak Mohammed.",
+    headline: "Business websites.", accent: "A place to be found.",
+    intro: "Give people a clear place to learn about your business, explore what you offer, and get in touch. I build websites for local businesses in Hawassa, Ethiopia.",
+    summary: "A website that introduces your business, explains your services, and makes contact details easy to find.",
+    prompts: ["I need a website for my business.", "People need to find my services and contact details.", "My website needs to work on a phone."],
+    business: [
+      { title: "Introduce your business", text: "Bring your services, products, location, and contact information together in one place." },
+      { title: "Make the next step clear", text: "Help visitors understand what you offer and how to contact you. Discuss ordering or other application features when your business needs more than an information website." },
+      { title: "Reach visitors on different screens", text: "Plan the content and layout for people browsing on phones as well as larger screens." },
+    ],
+    technical: "My web skills include Next.js, React, JavaScript, and Tailwind CSS. For websites that need application logic or data, my backend skills include Node.js, Express, Python, and Django, alongside relational and document databases. The choice depends on the project’s needs.",
+    technologies: ["Next.js", "React", "JavaScript", "Tailwind CSS", "Node.js", "Express"],
+    related: ["mayaye-eye-clinic", "fetan-delivery"],
+    workIntro: "Mayaye Eye Clinic is an example of a business information website. Fetan Delivery shows the additional features involved in an ordering application.",
+    start: ["Tell me about your business and who the website is for.", "Share the pages, information, and features you have in mind.", "Bring any existing website, content, or design references so we can discuss the scope."],
+    questions: [
+      { question: "What do I need before asking for a website?", answer: "Start with a description of your business, what customers need to find, and how they should contact you. Existing text, photos, branding, or a website link are helpful starting points." },
+      { question: "What affects the cost of a business website?", answer: "The number of pages, the content available, and features such as ordering or accounts affect the scope. Share what you need so we can discuss the work involved." },
+      { question: "Can we discuss an existing website?", answer: "Yes. Share the link and describe what you want to change. For fixes and ongoing updates, see the website and software maintenance service." },
+    ],
+    cta: "Let’s talk about your website.",
+  },
+  {
+    slug: "mobile-apps", number: "02", name: "Mobile applications", icon: "mobile",
+    path: "/services/mobile-apps/",
+    title: "Mobile App Development in Hawassa | Abdurazak Mohammed",
+    description: "Discuss mobile app development in Hawassa with Abdurazak Mohammed. Explore the VoiceLocal web and mobile project, Flutter, Firebase, and application features.",
+    headline: "Mobile applications.", accent: "Built around a task.",
+    intro: "Have an idea people need to use on their phones? Let’s discuss the people, the task, and the features behind it. I offer mobile app development from Hawassa, Ethiopia.",
+    summary: "Turn an app idea into a clear set of screens, actions, and connected features.",
+    prompts: ["I have an idea for a mobile app.", "People need to send reports and follow updates.", "I need a web and mobile experience."],
+    business: [
+      { title: "Start with the task", text: "Describe what someone should be able to do in the app, whether that is submitting a report, viewing information, or following progress." },
+      { title: "Connect people and information", text: "Discuss what information the app needs to store, who should be able to see it, and how people receive updates." },
+      { title: "Consider the wider experience", text: "If the idea also needs a website or an administrative view, include that in the scope from the beginning." },
+    ],
+    technical: "VoiceLocal uses Flutter for its mobile interface, React for the web, and Firebase with real-time Firestore feeds. Its existing features include photo and video reporting, community voting, role-based access, sector moderation, and a notification inbox.",
+    technologies: ["Flutter", "Firebase", "Firestore", "React"],
+    related: ["voicelocal"],
+    workIntro: "VoiceLocal is the existing web and mobile project in my portfolio. Its features provide a concrete starting point for discussing a connected application.",
+    start: ["Describe who will use the app and the main thing they need to do.", "List the essential screens and actions, including any accounts or updates.", "Tell me which devices and platforms matter, and whether a website is also part of the idea."],
+    questions: [
+      { question: "Do I need a technical specification?", answer: "No. Explain the idea in everyday language: who it is for, what they need to do, and what happens next. Sketches or examples can help make the conversation concrete." },
+      { question: "Do I need an app or a mobile-friendly website?", answer: "That depends on how people will use it. A website may cover information and contact needs; an app may suit a more involved or repeated task. We can discuss the features before deciding on the approach." },
+      { question: "Is there a mobile project I can explore?", answer: "VoiceLocal combines web and mobile interfaces for neighborhood reporting and community participation. The project links below include its web version and source code." },
+    ],
+    cta: "Tell me what your app should do.",
+  },
+  {
+    slug: "software-maintenance", number: "03", name: "Website & software maintenance", icon: "maintenance",
+    path: "/services/software-maintenance/",
+    title: "Website & Software Maintenance in Hawassa | Abdurazak Mohammed",
+    description: "Website updates, bug fixes, and software maintenance in Hawassa, Ethiopia. Discuss an existing website or application with Abdurazak Mohammed.",
+    headline: "Website & software", accent: "maintenance.",
+    intro: "A website needs a change, a feature has stopped working, or your software needs an update. Tell me what is happening and what you want it to do.",
+    summary: "Help with website changes, bug fixes, and updates to existing software.",
+    prompts: ["I need to update my website.", "A feature is not working as expected.", "My existing software needs a change."],
+    business: [
+      { title: "Keep information current", text: "Discuss updates to your website’s content, services, contact information, or layout." },
+      { title: "Explain a problem", text: "Describe the steps that lead to an issue and what you expected to happen. Screenshots and error messages can help explain it." },
+      { title: "Plan a change", text: "Talk through a feature or workflow that needs to change, including the parts of the existing system it affects." },
+    ],
+    technical: "My existing projects cover web interfaces, backend logic, databases, authentication, reporting, and real-time features. For maintenance, the starting point is the current codebase, its technologies, and a clear description of the issue. The scope depends on that review.",
+    technologies: ["JavaScript", "Next.js", "React", "Node.js", "Express", "Python", "Django", "PHP", "SQL"],
+    related: ["fetan-delivery", "mayaye-eye-clinic"],
+    workIntro: "These projects show the kinds of interfaces and application features in my portfolio. Maintenance for your system starts with understanding its own code and requirements.",
+    start: ["Share the website link or a description of the existing application.", "Describe the change or bug, what you expected, and how to reproduce the issue.", "Include the technology stack if you know it, and whether the source code or documentation is available."],
+    questions: [
+      { question: "Can I ask about a website built by someone else?", answer: "Yes. Share the website and describe the issue. Whether I can take on the work depends on the technology, available code, access, and scope." },
+      { question: "What if I don’t know the technology behind my website?", answer: "Start with the website link and explain the problem in your own words. If you have documentation or know who manages the site, mention that too." },
+      { question: "Can we discuss ongoing maintenance?", answer: "Yes. Describe the updates or support you need and how often. The work, availability, and terms need to be agreed for the specific project." },
+    ],
+    cta: "Let’s look at what needs attention.",
+  },
+];
+
+export function findService(pathname) {
+  const path = pathname.replace(/\/index\.html$/, "/").replace(/\/+$/, "") + "/";
+  return services.find((service) => service.path === path);
+}

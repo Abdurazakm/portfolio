@@ -2,8 +2,8 @@
 
 ## SEO and production builds
 
-`npm run build` builds the client and pre-renders the React portfolio into
-`dist/index.html`. The static HTML contains the same content visitors see;
+`npm run build` builds the client and pre-renders the homepage and three service
+pages into static HTML. The HTML contains the same content visitors see;
 React hydrates it to enable the hero, project previews, theme, and forms.
 Deploy the `dist` directory as a static site. No production Node server is needed.
 
@@ -15,8 +15,17 @@ Do not use a temporary branch preview URL. Without this value, the build warns
 and omits domain-dependent tags and the sitemap instead of publishing a guessed URL.
 
 Title, description, profile information, and social links are in `seo.config.mjs`.
-The existing social image is 1200 × 630 pixels. The sitemap contains the homepage;
-the page's section anchors are not separate URLs.
+The existing social image is 1200 × 630 pixels. Service content and page metadata
+live in `src/services.js`; shared project facts live in `src/projects.js`.
+The sitemap contains the homepage and these independently rendered pages:
+
+- `/services/business-websites/`
+- `/services/mobile-apps/`
+- `/services/software-maintenance/`
+
+Section anchors are not separate sitemap URLs. Each service page has its own
+canonical, social metadata, and WebPage/Service structured data. Vercel normalizes
+page URLs with a trailing slash and serves `dist/404.html` for missing pages.
 
 Vercel preview builds automatically emit `noindex, follow`. For other staging
 hosts, set `SEO_NOINDEX=true`. Production builds should leave this false/unset.

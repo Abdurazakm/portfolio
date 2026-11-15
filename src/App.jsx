@@ -4,6 +4,7 @@ import { useScrollReveal } from "./useScrollReveal";
 import { CircuitBackground } from "./components/CircuitBackground";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
+import { Services } from "./components/Services";
 import { Projects } from "./components/Projects";
 import { About } from "./components/About";
 import { Experience } from "./components/Experience";
@@ -27,6 +28,7 @@ export default function App() {
       <main ref={main} id="main" tabIndex={-1}>
         <Hero />
         <Projects />
+        <Services />
         <About />
         <Experience />
         <Contact />

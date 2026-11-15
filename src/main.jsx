@@ -4,12 +4,12 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import './index.css';
 import './themes.css';
 import './polish.css';
-import App from './App';
+import { Site } from './Site';
 
 const root = document.getElementById('root');
 const app = (
   <React.StrictMode>
-    <App />
+    <Site pathname={window.location.pathname} />
   </React.StrictMode>
 );
 
