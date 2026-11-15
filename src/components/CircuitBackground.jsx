@@ -19,6 +19,13 @@ function CircuitEdge({ side }) {
       {traces.map(({ path, x, y }, index) => (
         <g key={path} className={index === 3 ? "circuit-detail" : undefined}>
           <path className="circuit-trace" d={path} />
+          {index === (side === "left" ? 1 : 0) && (
+            <path
+              className="circuit-signal"
+              d={path}
+              pathLength="100"
+            />
+          )}
           <circle className="circuit-terminal" cx={x} cy={y} r="3" />
           {index === 0 && (
             <circle className="circuit-glow" cx={x} cy={y} r="8" />
