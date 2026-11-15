@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, Pause, Play, X } from "lucide-react";
 
-export function Header() {
+export function Header({ networkPaused, onToggleNetwork }) {
   const [open, setOpen] = useState(false);
   const toggle = useRef(null);
   useEffect(() => {
@@ -57,6 +57,23 @@ export function Header() {
             Let’s talk <ArrowUpRight size={16} />
           </a>
         </nav>
+        <button
+          type="button"
+          className="network-toggle"
+          aria-label={
+            networkPaused ? "Resume background animation" : "Pause background animation"
+          }
+          title={
+            networkPaused ? "Resume background animation" : "Pause background animation"
+          }
+          onClick={onToggleNetwork}
+        >
+          {networkPaused ? (
+            <Play size={16} aria-hidden="true" />
+          ) : (
+            <Pause size={16} aria-hidden="true" />
+          )}
+        </button>
       </div>
     </header>
   );
