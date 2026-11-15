@@ -20,6 +20,7 @@ const experience = [
     period: "INTERNSHIP",
     title: "A RC ICT",
     role: "Intern",
+    website: "https://www.arcict.et/",
   },
   {
     period: "2026",
