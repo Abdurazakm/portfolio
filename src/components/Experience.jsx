@@ -1,5 +1,6 @@
-import { ArrowUpRight, Award, GraduationCap, Plus, Shield } from "lucide-react";
+import { Award, Eye, GraduationCap, Plus, Shield } from "lucide-react";
 import { certificates } from "../certificates";
+import { CertificateViewer } from "./CertificateViewer";
 
 const featuredCertificates = certificates.filter((cert) => cert.featured);
 const otherCertificates = certificates.filter((cert) => !cert.featured);
@@ -100,15 +101,12 @@ export function Experience() {
                   <li key={skill}>{skill}</li>
                 ))}
               </ul>
-              <a
+              <CertificateViewer
                 className="credential-action"
-                href={cert.image}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`View ${cert.issuer} ${cert.featured.title} certificate (opens in a new tab)`}
+                certificate={cert}
               >
-                View certificate <ArrowUpRight size={17} aria-hidden="true" />
-              </a>
+                View certificate <Eye size={17} aria-hidden="true" />
+              </CertificateViewer>
             </article>
           ))}
           <article className="credential-card credential-training">
@@ -155,17 +153,25 @@ export function Experience() {
                   <ul>
                     {cert.images.map((image, index) => (
                       <li key={image}>
-                        <a href={image} target="_blank" rel="noreferrer">
+                        <CertificateViewer
+                          certificate={cert}
+                          image={image}
+                          title={cert.certificateNames[index]}
+                          className="certificate-link"
+                        >
                           {cert.certificateNames[index]}{" "}
-                          <ArrowUpRight size={14} />
-                        </a>
+                          <Eye size={14} aria-hidden="true" />
+                        </CertificateViewer>
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <a href={cert.image} target="_blank" rel="noreferrer">
-                    View certificate <ArrowUpRight size={15} />
-                  </a>
+                  <CertificateViewer
+                    certificate={cert}
+                    className="certificate-link"
+                  >
+                    View certificate <Eye size={15} aria-hidden="true" />
+                  </CertificateViewer>
                 )}
               </article>
             ))}
