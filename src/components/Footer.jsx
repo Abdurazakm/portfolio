@@ -1,11 +1,14 @@
 import { ArrowUp } from "lucide-react";
+import { useHydrated } from "../useHydrated";
 export function Footer({ networkPaused, onToggleNetwork }) {
+  const hydrated = useHydrated();
+  const year = hydrated ? new Date().getFullYear() : import.meta.env.VITE_BUILD_YEAR;
   return (
     <footer className="shell footer">
       <a href="#home" className="brand" aria-label="Abdurazak Mohammed, home">
         am<span>.</span>
       </a>
-      <p>© {new Date().getFullYear()} Abdurazak Mohammed</p>
+      <p>© {year} Abdurazak Mohammed</p>
       <span>Made with care. Built with React.</span>
       <button className="motion-toggle" type="button" onClick={onToggleNetwork}>
         {networkPaused ? "Resume background motion" : "Pause background motion"}

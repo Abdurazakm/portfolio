@@ -1,10 +1,37 @@
 # 🚀 Abdurazak Mohammed - Portfolio Website
 
+## SEO and production builds
+
+`npm run build` builds the client and pre-renders the React portfolio into
+`dist/index.html`. The static HTML contains the same content visitors see;
+React hydrates it to enable the hero, project previews, theme, and forms.
+Deploy the `dist` directory as a static site. No production Node server is needed.
+
+The primary public URL is `https://abdurazak.dev/`, configured in `seo.config.mjs`.
+To change it, update `siteUrl` or set `SITE_URL` in the deployment environment.
+This one value controls the canonical
+link, absolute social image URLs, structured-data IDs, robots.txt, and sitemap.xml.
+Do not use a temporary branch preview URL. Without this value, the build warns
+and omits domain-dependent tags and the sitemap instead of publishing a guessed URL.
+
+Title, description, profile information, and social links are in `seo.config.mjs`.
+The existing social image is 1200 × 630 pixels. The sitemap contains the homepage;
+the page's section anchors are not separate URLs.
+
+Vercel preview builds automatically emit `noindex, follow`. For other staging
+hosts, set `SEO_NOINDEX=true`. Production builds should leave this false/unset.
+Preview pages remain crawlable so search engines can read the noindex directive.
+
+Validation: `npm run test:seo`, `npm run build`, then `npm run check:seo`.
+After deployment, verify the production URL in Google Search Console, submit
+`/sitemap.xml`, and use URL Inspection to request indexing. Indexing and search
+appearance depend on the search engine; markup does not guarantee a rich result.
+
 A modern, responsive portfolio website built with React, showcasing professional experience, education, projects, and certificates with beautiful animations and interactive features.
 
 ## 🌐 Live Demo
 
-**[View Live Portfolio →](https://portfolio-1i5s-git-version-2-abdurazakms-projects.vercel.app/)**
+**[View Live Portfolio →](https://abdurazak.dev/)**
 
 ## ✨ Features
 

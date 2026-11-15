@@ -1,4 +1,4 @@
-import { ArrowUpRight, Award, Eye, GraduationCap, Plus, Shield } from "lucide-react";
+import { ArrowUpRight, Eye, GraduationCap, Plus } from "lucide-react";
 import { certificates } from "../certificates";
 import { CertificateViewer } from "./CertificateViewer";
 
@@ -16,7 +16,7 @@ const experience = [
     role: "Junior Developer",
     website: "https://www.yaltopiatech.com/",
     description:
-      "Contributing to multiple projects as a junior developer, applying and strengthening my software development skills through hands-on work.",
+      "Contributing to software development across multiple projects.",
   },
   {
     period: "INTERNSHIP",
@@ -24,7 +24,7 @@ const experience = [
     role: "Intern",
     website: "https://www.arcict.et/",
     description:
-      "Working across multiple projects as an intern, gaining practical experience and developing my skills in a professional environment.",
+      "Working across multiple projects as part of a development internship.",
   },
   {
     period: "2026",
@@ -55,7 +55,7 @@ export function Experience() {
         <div>
           <p className="eyebrow">03 / THE JOURNEY</p>
           <h2>
-            Always building. Always learning<span>.</span>
+            Work experience & learning<span>.</span>
           </h2>
         </div>
       </div>
@@ -110,27 +110,14 @@ export function Experience() {
           </div>
           <p>A foundation for the work I build.</p>
         </div>
-        <div className="featured-credentials">
+        <div className="credential-highlights">
           {featuredCertificates.map((cert) => (
-            <article className="credential-card" key={cert.title}>
-              <div className="credential-card-top">
-                <span className="issuer-mark" aria-hidden="true">
-                  {cert.featured.monogram}
-                </span>
-                <span className="credential-kind">
-                  <Award size={14} aria-hidden="true" /> Certificate
-                </span>
+            <article className="credential-row" key={cert.title}>
+              <div>
+                <p className="eyebrow">{cert.issuer} · {cert.year}</p>
+                <h4>{cert.featured.title}</h4>
+                <p className="credential-topics">{cert.featured.skills.join(" · ")}</p>
               </div>
-              <p className="eyebrow">
-                {cert.issuer} · {cert.year}
-              </p>
-              <h4>{cert.featured.title}</h4>
-              <p className="credential-description">{cert.featured.summary}</p>
-              <ul className="tags" aria-label="Areas of study">
-                {cert.featured.skills.map((skill) => (
-                  <li key={skill}>{skill}</li>
-                ))}
-              </ul>
               <CertificateViewer
                 className="credential-action"
                 certificate={cert}
@@ -139,27 +126,6 @@ export function Experience() {
               </CertificateViewer>
             </article>
           ))}
-          <article className="credential-card credential-training">
-            <div className="credential-card-top">
-              <span className="issuer-mark" aria-hidden="true">
-                INSA
-              </span>
-              <span className="credential-kind">
-                <Shield size={14} aria-hidden="true" /> Training
-              </span>
-            </div>
-            <p className="eyebrow">INSA · SUMMER 2025</p>
-            <h4>Cyber Talent Summer Camp</h4>
-            <p className="credential-description">
-              Intensive training in cybersecurity and software development in
-              Ethiopia.
-            </p>
-            <ul className="tags" aria-label="Areas of study">
-              <li>Cybersecurity</li>
-              <li>Development</li>
-            </ul>
-            <p className="credential-note">Development department</p>
-          </article>
         </div>
         <details className="certificates">
           <summary>

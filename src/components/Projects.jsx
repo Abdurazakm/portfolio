@@ -1,4 +1,5 @@
-import { ArrowUpRight, Github, Plus } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
+import { ProjectPreview } from "./ProjectPreview";
 
 const projects = [
   {
@@ -15,6 +16,20 @@ const projects = [
       "Campus food ordering brings together customers, restaurant operations, and delivery status.",
     implementation:
       "The platform combines order management, admin dashboards, service availability, and SMS notifications in one full-stack application.",
+    walkthrough: [
+      {
+        title: "Campus ordering",
+        description: "Food ordering for AASTU students, with service availability and order management.",
+      },
+      {
+        title: "Restaurant operations",
+        description: "Admin dashboards bring the operational side of the delivery platform into the application.",
+      },
+      {
+        title: "Delivery updates",
+        description: "Order tracking, delivery status, and SMS notifications keep the delivery process connected.",
+      },
+    ],
   },
   {
     title: "VoiceLocal",
@@ -70,36 +85,10 @@ export function Projects() {
             className={"project project-" + project.image}
             key={project.title}
           >
-            <a
-              className="project-visual"
-              href={project.demo}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={"Open " + project.title + " live website"}
-            >
-              <div className="browser-frame">
-                <div className="browser-bar">
-                  <i />
-                  <i />
-                  <i />
-                  <span>{new URL(project.demo).hostname}</span>
-                  <ArrowUpRight size={12} />
-                </div>
-                <img
-                  src={"/projects/" + project.image + ".jpg"}
-                  alt={project.title + " website homepage"}
-                  width="1274"
-                  height="718"
-                  loading="lazy"
-                />
-              </div>
-              <span className="preview-label">
-                LIVE WEBSITE <ArrowUpRight size={14} />
-              </span>
-            </a>
+            <ProjectPreview project={project} />
             <div className="project-copy">
               <div className="project-kicker">
-                <span>{project.category}</span>
+                <span>{project.walkthrough ? "FEATURED / " : ""}{project.category}</span>
                 <span>{project.number}</span>
               </div>
               <h3>{project.title}</h3>
@@ -120,18 +109,28 @@ export function Projects() {
                   </a>
                 )}
               </div>
-              <details className="project-details">
-                <summary>
-                  Behind the project <Plus size={16} />
-                </summary>
-                <div>
-                  <h4>The purpose</h4>
-                  <p>{project.context}</p>
-                  <h4>The implementation</h4>
-                  <p>{project.implementation}</p>
-                </div>
-              </details>
             </div>
+            {project.walkthrough && (
+              <section className="project-overview" aria-labelledby="fetan-overview-heading">
+                <div className="project-overview-intro">
+                  <p className="eyebrow">PROJECT OVERVIEW</p>
+                  <h4 id="fetan-overview-heading">Connecting campus orders and delivery.</h4>
+                  <p>{project.context}</p>
+                </div>
+                <ol className="project-walkthrough">
+                  {project.walkthrough.map((step) => (
+                    <li key={step.title}>
+                      <h5>{step.title}</h5>
+                      <p>{step.description}</p>
+                    </li>
+                  ))}
+                </ol>
+                <p className="project-stack-note">
+                  <strong>The stack</strong> React, Node.js, PostgreSQL, and Prisma
+                  bring the interface, backend, and data together in a full-stack application.
+                </p>
+              </section>
+            )}
           </article>
         ))}
       </div>

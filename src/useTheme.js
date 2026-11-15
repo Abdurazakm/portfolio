@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useHydrated } from "./useHydrated";
 
 function readPreference() {
   try {
@@ -10,7 +11,8 @@ function readPreference() {
 }
 
 export function useTheme() {
-  const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || "dark");
+  const hydrated = useHydrated();
+  const [theme, setTheme] = useState(() => typeof document === "undefined" ? "dark" : document.documentElement.dataset.theme || "dark");
   const preference = useRef(readPreference());
 
   useEffect(() => {
@@ -45,5 +47,5 @@ export function useTheme() {
     try { localStorage.setItem("portfolio-theme", next); } catch { /* Still works in memory. */ }
   }
 
-  return { theme, toggleTheme };
+  return { theme: hydrated ? theme : "dark", toggleTheme };
 }
