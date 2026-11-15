@@ -15,12 +15,16 @@ const experience = [
     title: "Yaltopia Tech",
     role: "Junior Developer",
     website: "https://www.yaltopiatech.com/",
+    description:
+      "Contributing to multiple projects as a junior developer, applying and strengthening my software development skills through hands-on work.",
   },
   {
     period: "INTERNSHIP",
     title: "A RC ICT",
     role: "Intern",
     website: "https://www.arcict.et/",
+    description:
+      "Working across multiple projects as an intern, gaining practical experience and developing my skills in a professional environment.",
   },
   {
     period: "2026",
