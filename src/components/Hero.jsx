@@ -45,7 +45,9 @@ export function Hero() {
     <section id="home" className="hero-section hero-interactive" data-view={selected}>
       <div className="hero shell">
         <div className="hero-identity">
-          <img className="hero-mobile-portrait" src="/abdurazak.png" alt="Abdurazak Mohammed" width="56" height="56" />
+          <span className="hero-mobile-portrait">
+            <img src="/me.jpg" alt="Abdurazak Mohammed" width="640" height="640" />
+          </span>
           <p className="eyebrow">
             <span className="blue-dot" /> FULL-STACK DEVELOPER · HAWASSA, ETHIOPIA
           </p>

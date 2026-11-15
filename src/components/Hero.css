@@ -8,6 +8,14 @@
 }
 .hero-identity { grid-column: 1; grid-row: 1; }
 .hero-mobile-portrait { display: none; }
+.hero-interactive .portrait-frame img,
+.hero-mobile-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.65);
+  transform-origin: 50% 0%;
+}
 .hero-identity > .eyebrow { display: flex; align-items: center; gap: 9px; line-height: 1.8; }
 .hero-name-line { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 7px; margin-top: 20px; }
 .hero-name-line > span { color: var(--muted); font-size: 18px; }
@@ -97,7 +105,7 @@
 @media (max-width: 760px) {
   .hero-interactive .hero { grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(6, auto); padding-top: 24px; gap: 0; }
   .hero-identity { grid-row: 1; display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; align-items: center; }
-  .hero-mobile-portrait { display: block; grid-column: 1; grid-row: 1; width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 1px solid var(--profile-border); box-shadow: 0 0 0 4px var(--profile-glow); }
+  .hero-mobile-portrait { display: block; grid-column: 1; grid-row: 1; width: 48px; height: 48px; overflow: hidden; border-radius: 50%; border: 1px solid var(--profile-border); box-shadow: 0 0 0 4px var(--profile-glow); }
   .hero-name-line { grid-column: 2; grid-row: 1; display: block; margin-top: 0; }
   .hero-name-line > span { display: block; font-size: 12px; margin-bottom: 3px; }
   .hero-interactive .hero-name-line h1 { font-size: 20px; letter-spacing: -0.6px; }

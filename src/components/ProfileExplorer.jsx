@@ -22,7 +22,7 @@ export function ProfileExplorer({ selected, interacted }) {
         </svg>
         <figure className="portrait-composition">
           <div className="portrait-frame">
-            <img src="/abdurazak.png" alt="Abdurazak Mohammed" width="722" height="722" fetchPriority="high" />
+            <img src="/me.jpg" alt="Abdurazak Mohammed" width="640" height="640" fetchPriority="high" />
           </div>
           <figcaption className="portrait-caption">
             <span><MapPin size={12} aria-hidden="true" /> Hawassa, Ethiopia</span>
