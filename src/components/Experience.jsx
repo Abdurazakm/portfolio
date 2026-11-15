@@ -1,4 +1,4 @@
-import { Award, Eye, GraduationCap, Plus, Shield } from "lucide-react";
+import { ArrowUpRight, Award, Eye, GraduationCap, Plus, Shield } from "lucide-react";
 import { certificates } from "../certificates";
 import { CertificateViewer } from "./CertificateViewer";
 
@@ -10,6 +10,17 @@ const otherCertificateCount = otherCertificates.reduce(
 );
 
 const experience = [
+  {
+    period: "CURRENT",
+    title: "Yaltopia Tech",
+    role: "Junior Developer",
+    website: "https://www.yaltopiatech.com/",
+  },
+  {
+    period: "INTERNSHIP",
+    title: "A RC ICT",
+    role: "Intern",
+  },
   {
     period: "2026",
     title: "AASTU GDG Club",
@@ -49,9 +60,23 @@ export function Experience() {
             <article className="timeline-item" key={item.title}>
               <p className="eyebrow">{item.period}</p>
               <div>
-                <h3>{item.title}</h3>
+                <h3>
+                  {item.website ? (
+                    <a
+                      className="experience-company-link"
+                      href={item.website}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${item.title} company website (opens in a new tab)`}
+                    >
+                      {item.title} <ArrowUpRight size={15} aria-hidden="true" />
+                    </a>
+                  ) : (
+                    item.title
+                  )}
+                </h3>
                 <span className="experience-role">{item.role}</span>
-                <p>{item.description}</p>
+                {item.description && <p>{item.description}</p>}
               </div>
             </article>
           ))}

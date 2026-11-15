@@ -618,6 +618,15 @@ summary::-webkit-details-marker {
   font-size: 12px;
   color: var(--blue);
 }
+.experience-company-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 28px;
+}
+.experience-company-link:hover {
+  color: var(--blue);
+}
 .timeline-item div > p {
   font-size: 13px;
   color: var(--muted);
