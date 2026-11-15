@@ -656,6 +656,133 @@ summary::-webkit-details-marker {
   line-height: 1.7;
   color: #bdc4d4;
 }
+.credentials {
+  margin-top: 60px;
+}
+.credentials-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+.credentials-heading h3 {
+  margin-top: 12px;
+  font-size: 29px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+.credentials-heading h3 > span {
+  color: var(--blue);
+}
+.credentials-heading > p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.featured-credentials {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.credential-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 26px;
+  border: 1px solid #363e50;
+  border-top: 2px solid #87aaff;
+  border-radius: 10px;
+  background: #191d25;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+.credential-card:hover,
+.credential-card:focus-within {
+  border-color: #6984bd;
+  background: #1d222c;
+}
+.credential-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 27px;
+}
+.issuer-mark {
+  min-width: 48px;
+  height: 44px;
+  padding-inline: 9px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #40516f;
+  border-radius: 8px;
+  color: #b6cbff;
+  background: #253048;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.credential-kind {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #bec9dd;
+  font-size: 10px;
+}
+.credential-card > .eyebrow {
+  font-size: 10px;
+  letter-spacing: 1.3px;
+}
+.credential-card h4 {
+  margin: 12px 0;
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 1.35;
+}
+.credential-description {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.credential-card .tags {
+  margin: 20px 0 24px;
+}
+.credential-action,
+.credential-note {
+  margin-top: auto;
+  border-top: 1px solid #343d4e;
+  padding-top: 17px;
+  min-height: 44px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.credential-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  color: #b6cbff;
+}
+.credential-action:hover {
+  color: white;
+}
+.credential-training {
+  background: #191f22;
+  border-color: #354247;
+  border-top-color: #8fbdb5;
+}
+.credential-training .issuer-mark {
+  color: #b1d8d1;
+  background: #233635;
+  border-color: #3b5a56;
+}
+.credential-note {
+  color: var(--muted);
+}
 .certificates {
   border-block: 1px solid var(--line);
   margin-top: 35px;
@@ -688,7 +815,7 @@ summary::-webkit-details-marker {
 .certificate-grid .eyebrow {
   font-size: 9px;
 }
-.certificate-grid h3 {
+.certificate-grid h4 {
   font-size: 14px;
   line-height: 1.6;
   margin: 10px 0 15px;
@@ -895,6 +1022,21 @@ summary::-webkit-details-marker {
   }
 }
 @media (max-width: 760px) {
+  .credentials-heading {
+    display: block;
+  }
+  .credentials-heading > p {
+    margin-top: 12px;
+  }
+  .credentials-heading h3 {
+    font-size: 27px;
+  }
+  .featured-credentials {
+    grid-template-columns: 1fr;
+  }
+  .credential-card {
+    padding: 24px;
+  }
   html {
     scroll-padding-top: 86px;
   }

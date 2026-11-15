@@ -2,6 +2,12 @@ export const certificates = [
   {
     title: "Software Engineering – Backend Web Development",
     issuer: "ALX Africa",
+    featured: {
+      title: "Backend Web Development",
+      summary: "Building the foundations behind reliable web applications.",
+      skills: ["Python", "Django", "APIs"],
+      monogram: "ALX",
+    },
     year: "2025",
     image:
       "https://i.postimg.cc/rF0m2xBZ/70-back-end-web-development-certificate-abdurazak-mohammed.png",
@@ -35,6 +41,13 @@ export const certificates = [
   {
     title: "React Certificate",
     issuer: "GDG",
+    featured: {
+      title: "React Development",
+      summary:
+        "Creating modern interfaces with reusable components and thoughtful state management.",
+      skills: ["React", "Components", "State management"],
+      monogram: "GDG",
+    },
     year: "2024",
     image: "https://i.postimg.cc/ZqC5k7kD/Abdurazak-Mohammed.png",
     description:
