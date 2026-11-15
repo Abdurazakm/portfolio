@@ -12,9 +12,9 @@ export function Hero() {
       <div className="hero shell">
         <div className="hero-copy">
           <p className="eyebrow">
-            <span className="blue-dot" /> ABDURAZAK MOHAMMED · FULL-STACK
-            DEVELOPER
+            <span className="blue-dot" /> FULL-STACK DEVELOPER · HAWASSA, ETHIOPIA
           </p>
+          <p className="hero-intro">Hi, I’m <strong>Abdurazak Mohammed.</strong></p>
           <h1>
             Thoughtful code.
             <br />

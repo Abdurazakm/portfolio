@@ -1,9 +1,20 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Menu, Moon, Pause, Play, Sun, X } from "lucide-react";
+import { ArrowUpRight, Menu, Moon, Sun, X } from "lucide-react";
 
-export function Header({ networkPaused, onToggleNetwork, theme, onToggleTheme }) {
+export function Header({ theme, onToggleTheme }) {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("home");
   const toggle = useRef(null);
+  useEffect(() => {
+    if (!("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      }
+    }, { rootMargin: "-20% 0px -60% 0px" });
+    document.querySelectorAll("main > section").forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
   useEffect(() => {
     const close = (event) => {
       if (event.key === "Escape" && open) {
@@ -19,11 +30,15 @@ export function Header({ networkPaused, onToggleNetwork, theme, onToggleTheme })
       <div className="shell header-inner">
         <a
           href="#home"
-          className="brand"
+          className="brand header-brand"
           aria-label="Abdurazak Mohammed, home"
           onClick={() => setOpen(false)}
         >
-          am<span>.</span>
+          <span className="brand-monogram">am<span>.</span></span>
+          <span className="brand-details">
+            <strong>Abdurazak</strong>
+            <small>Full-stack developer</small>
+          </span>
         </a>
         <button
           ref={toggle}
@@ -40,18 +55,19 @@ export function Header({ networkPaused, onToggleNetwork, theme, onToggleTheme })
           aria-label="Main navigation"
           className={open ? "navigation is-open" : "navigation"}
         >
-          <a href="#projects" onClick={() => setOpen(false)}>
+          <a href="#projects" aria-current={active === "projects" ? "location" : undefined} onClick={() => setOpen(false)}>
             Work
           </a>
-          <a href="#about" onClick={() => setOpen(false)}>
+          <a href="#about" aria-current={active === "about" ? "location" : undefined} onClick={() => setOpen(false)}>
             About
           </a>
-          <a href="#experience" onClick={() => setOpen(false)}>
+          <a href="#experience" aria-current={active === "experience" ? "location" : undefined} onClick={() => setOpen(false)}>
             Experience
           </a>
           <a
             href="#contact"
             className="nav-contact"
+            aria-current={active === "contact" ? "location" : undefined}
             onClick={() => setOpen(false)}
           >
             Let’s talk <ArrowUpRight size={16} />
@@ -65,23 +81,6 @@ export function Header({ networkPaused, onToggleNetwork, theme, onToggleTheme })
           onClick={onToggleTheme}
         >
           {theme === "dark" ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
-        </button>
-        <button
-          type="button"
-          className="network-toggle"
-          aria-label={
-            networkPaused ? "Resume background animation" : "Pause background animation"
-          }
-          title={
-            networkPaused ? "Resume background animation" : "Pause background animation"
-          }
-          onClick={onToggleNetwork}
-        >
-          {networkPaused ? (
-            <Play size={16} aria-hidden="true" />
-          ) : (
-            <Pause size={16} aria-hidden="true" />
-          )}
         </button>
       </div>
     </header>

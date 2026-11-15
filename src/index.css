@@ -213,10 +213,40 @@ h2 > span {
 .brand span {
   color: var(--blue);
 }
+.header-brand {
+  gap: 12px;
+  letter-spacing: 0;
+}
+.header-brand .brand-monogram {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--surface);
+  font-size: 25px;
+  letter-spacing: -2px;
+  color: inherit;
+}
+.header-brand .brand-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: inherit;
+}
+.brand-details strong { font-size: 14px; font-weight: 600; }
+.brand-details small { font-size: 10px; font-weight: 400; color: var(--muted); }
 .navigation {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 4px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
   font-size: 13px;
   color: #c3c6ce;
 }
@@ -225,17 +255,27 @@ h2 > span {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  padding-inline: 16px;
+  border-radius: 999px;
+  transition: color 180ms ease, background 180ms ease;
 }
 .navigation > a:hover {
   color: white;
+  background: #87aaff12;
+}
+.navigation > a[aria-current="location"]:not(.nav-contact) {
+  color: var(--blue);
+  background: #87aaff20;
 }
 .navigation .nav-contact {
-  border: 1px solid #42454c;
-  border-radius: 6px;
+  border: 1px solid transparent;
+  border-radius: 999px;
   padding: 0 18px;
   margin-left: 5px;
   color: white;
+  background: var(--accent);
 }
+.navigation .nav-contact:hover { background: #2855c9; }
 .menu-toggle {
   display: none;
 }
@@ -348,6 +388,15 @@ h2 > span {
   letter-spacing: -3.5px;
   margin: 25px 0;
 }
+.hero-intro {
+  margin-top: 25px;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.hero-intro strong { color: var(--blue); font-weight: 500; }
+.hero-intro + h1 { margin-top: 14px; }
 .hero h1 > span {
   color: var(--blue);
 }
@@ -456,7 +505,6 @@ h2 > span {
   align-items: center;
   gap: 12px;
 }
-.network-toggle,
 .theme-toggle {
   flex-shrink: 0;
   display: inline-flex;
@@ -468,12 +516,11 @@ h2 > span {
   padding: 0 10px;
   background: transparent;
   border: 1px solid var(--line);
-  border-radius: 5px;
+  border-radius: 50%;
   color: #bcc8dc;
   font-size: 11px;
   letter-spacing: 0;
 }
-.network-toggle:hover,
 .theme-toggle:hover {
   background: #26354e;
   color: white;
@@ -1173,8 +1220,18 @@ summary::-webkit-details-marker {
   display: flex;
   align-items: center;
   gap: 28px;
+  flex-wrap: wrap;
   padding-block: 30px;
 }
+.motion-toggle {
+  min-height: 44px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  font-size: 10px;
+  color: var(--muted);
+}
+.motion-toggle:hover { color: var(--blue); }
 .footer p,
 .footer > span,
 .back-top {
@@ -1246,9 +1303,6 @@ summary::-webkit-details-marker {
   .header-inner {
     gap: 10px;
   }
-  .network-toggle {
-    order: 1;
-  }
   .theme-toggle {
     order: 1;
   }
@@ -1312,19 +1366,20 @@ summary::-webkit-details-marker {
     justify-content: center;
     background: transparent;
     border: 1px solid #414650;
-    border-radius: 6px;
+    border-radius: 50%;
     width: 44px;
     height: 44px;
   }
   .navigation {
     display: none;
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 68px;
+    left: 16px;
+    right: 16px;
+    top: 76px;
     background: #17191e;
-    border-bottom: 1px solid #414650;
-    padding: 16px 20px 24px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 10px;
     box-shadow: 0 15px 20px #0004;
     gap: 5px;
   }
@@ -1332,9 +1387,11 @@ summary::-webkit-details-marker {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    animation: navigation-enter 180ms ease-out;
   }
   .navigation > a {
     padding: 8px 12px;
+    border-radius: 10px;
   }
   .navigation .nav-contact {
     margin: 8px 0 0;
@@ -1350,6 +1407,8 @@ summary::-webkit-details-marker {
     letter-spacing: -2.5px;
     margin: 23px 0;
   }
+  .hero-intro { font-size: 18px; margin-top: 20px; }
+  .hero-intro + h1 { margin-top: 12px; }
   .hero-copy > .eyebrow {
     font-size: 8px;
     letter-spacing: 1.1px;
@@ -1571,7 +1630,7 @@ summary::-webkit-details-marker {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .network-toggle,
+  .motion-toggle,
   .circuit-signal {
     display: none;
   }
@@ -1588,4 +1647,8 @@ summary::-webkit-details-marker {
   .primary:hover {
     transform: none;
   }
+}
+@keyframes navigation-enter {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
 }

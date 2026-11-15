@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTheme } from "./useTheme";
+import { useScrollReveal } from "./useScrollReveal";
 import { CircuitBackground } from "./components/CircuitBackground";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
@@ -11,6 +12,7 @@ import { Footer } from "./components/Footer";
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
+  const main = useScrollReveal();
   const [networkPaused, setNetworkPaused] = useState(false);
   return (
     <>
@@ -21,17 +23,18 @@ export default function App() {
       <Header
         theme={theme}
         onToggleTheme={toggleTheme}
-        networkPaused={networkPaused}
-        onToggleNetwork={() => setNetworkPaused((paused) => !paused)}
       />
-      <main id="main" tabIndex={-1}>
+      <main ref={main} id="main" tabIndex={-1}>
         <Hero />
         <Projects />
         <About />
         <Experience />
         <Contact />
       </main>
-      <Footer />
+      <Footer
+        networkPaused={networkPaused}
+        onToggleNetwork={() => setNetworkPaused((paused) => !paused)}
+      />
     </>
   );
 }

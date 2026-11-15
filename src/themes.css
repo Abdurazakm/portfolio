@@ -32,18 +32,18 @@
 }
 [data-theme="light"] :is(.navigation, .hero-socials a, .hero-footnote,
   .project-kicker, .project-details, .education-bottom, .credential-kind,
-  .contact-socials a, .network-toggle, .theme-toggle) { color: var(--muted); }
+  .contact-socials a, .theme-toggle) { color: var(--muted); }
 [data-theme="light"] :is(.navigation > a:hover, .navigation .nav-contact,
   .hero-socials a:hover, .portrait-caption strong, .project-tagline,
   .project-details h4, .contact-form label, .contact-socials a:hover,
-  .network-toggle:hover, .theme-toggle:hover) { color: #182338; }
+  .theme-toggle:hover) { color: #182338; }
 [data-theme="light"] :is(.secondary, .navigation .nav-contact, .menu-toggle,
   .tags li, .education, .education-bottom, .credential-card, .credential-action,
   .credential-note, .certificate-viewer, .certificate-viewer-close,
   .about-section, .contact-section, .email-link) { border-color: var(--line); }
 [data-theme="light"] :is(.project-kicker > span:last-child, .hero-footnote > span > span,
   .capability-top > span) { color: #64738b; }
-[data-theme="light"] :is(.secondary:hover, .network-toggle:hover,
+[data-theme="light"] :is(.secondary:hover,
   .theme-toggle:hover, .certificate-viewer-close:hover) { background: #e6edf8; }
 [data-theme="light"] .primary:hover { background: #214db7; }
 [data-theme="light"] .portrait-frame { background: #e3e9f2; outline-color: #becbe0; }
@@ -87,6 +87,8 @@
 }
 [data-theme="light"] .form-status.success { color: #246a42; }
 [data-theme="light"] .form-status.error { color: #ae3432; }
+[data-theme="light"] .navigation a.nav-contact { color: white; border-color: transparent; }
+[data-theme="light"] .navigation a.nav-contact:hover { color: white; }
 @media (max-width: 760px) {
   [data-theme="light"] .navigation { background: #f7f9fc; border-color: var(--line); }
   [data-theme="light"] .circuit-signal { stroke: #4c73ad; filter: none; }
