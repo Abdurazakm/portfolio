@@ -3,8 +3,8 @@ export const siteUrl = "https://www.abdurazak.dev/";
 
 export const seo = {
   name: "Abdurazak Mohammed",
-  title: "Abdurazak Mohammed | Full-Stack Developer in Ethiopia",
-  description: "Abdurazak Mohammed, a full-stack developer in Hawassa, Ethiopia, building React interfaces and backend systems. Explore projects, experience, and contact details.",
+  title: "Abdurazak Mohammed | Full-Stack Developer in Hawassa",
+  description: "Abdurazak Mohammed, a full-stack developer in Hawassa, Ethiopia, building React interfaces and Node.js APIs. Explore Fetan Delivery and other projects.",
   socialImage: "/social-preview.jpg",
   socialImageAlt: "Abdurazak Mohammed — full-stack developer portfolio",
   sameAs: [

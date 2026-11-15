@@ -33,9 +33,10 @@ export function About() {
             Developer by practice<span>.</span>
           </h2>
           <p>
-            I’m Abdurazak, a software engineering student at Addis Ababa Science
-            and Technology University, with a focus on full-stack applications
-            and backend development.
+            I’m Abdurazak Mohammed, a full-stack web developer based in Hawassa,
+            Ethiopia. I’m also studying software engineering at Addis Ababa
+            Science and Technology University (AASTU), with a focus on backend
+            development.
           </p>
           <p>
             I enjoy connecting the pieces: a clear interface, a well-structured

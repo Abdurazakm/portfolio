@@ -29,7 +29,7 @@ export function structuredData(url) {
     "@id": url ? `${url}#person` : "#person",
     name: seo.name,
     jobTitle: "Full-stack Developer",
-    description: "Full-stack developer and software engineering student building React interfaces and backend systems.",
+    description: seo.description,
     sameAs: seo.sameAs,
     homeLocation: { "@type": "Place", name: "Hawassa, Ethiopia" },
     ...(url && { url, image: new URL("/abdurazak.png", url).href }),

@@ -2,7 +2,7 @@ export const heroViews = [
   {
     id: "build", label: "Build", number: "01",
     headline: "Thoughtful code.", accent: "Useful products.",
-    description: "I’m a full-stack developer building React interfaces and backend systems for practical, everyday needs.",
+    description: "I’m a full-stack developer building React web applications and Node.js APIs for practical, everyday needs.",
     topics: ["WEB APPLICATIONS", "BACKEND SYSTEMS", "REAL-WORLD IDEAS"],
     href: "#projects", link: "Explore my work",
     detailLabel: "FROM IDEA TO APPLICATION", orbitCaption: "INTERFACE → API → DATA",
